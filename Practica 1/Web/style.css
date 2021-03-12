@@ -23,6 +23,7 @@ h2 {
 
 
 body{
+	font-size: 80%;
 	text-align: center;
 
 }
@@ -37,12 +38,30 @@ body{
 
 /*Estilo de cabecera*/
 #cabecera {
- background: #FFFBB9;
+ display:block;
+ width: 500px;
+ margin: 50px auto;
+ text-align: center;
+ background: #DDDDDD;
  border: 1px solid #999999
- padding: 20px;
+ padding: 15px;
+ border-radius: 20px 0px; /*Modifica bordes de un box creador*/
+ box-shadow: rgb(150,150,150) 5px 5px;
+}
+
+#icon {
+	float: left;
+
+}
+#titulo {
+	float:left;
+	font-family: "Courier New", monospace;
+	font-size: 70px:
+	text-shadow: rgb(0,0,150) 3px 3px 5px;
 }
 
 #menuCabecera {
+	clear:both;
 	background: #CCCCCC;
 	padding: 5px 15px;
 }
@@ -72,6 +91,22 @@ Articulos o eventos principales*/
 	width: 660px;
 	margin: 20px;
 	box-sizing: border-box;
+}
+
+
+
+#post{
+	object-fit: cover;
+	float: left;
+	border: 10px solid #3EC483;
+	background: #5DEAAB;
+	height: 100px;
+	width: 100px;
+	padding: 10px;
+	margin: 10px;
+
+	/*border-radius: 10%;*/
+
 }
 
 /*Estilo de pie de página*/
