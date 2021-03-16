@@ -1,0 +1,124 @@
+
+/*Declaración de parametros globales para todas las páginas*/
+header, section, footer, aside, nav, article{
+	display: block;
+}
+
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+h1 {
+	font: bold 20px verdana, sans-serif;
+}
+
+
+h2 {
+	font: bold 14px verdana, sans-serif;
+}
+
+
+
+body{
+	margin: 0px;
+	fill: 0px;
+
+}
+
+/*Estilo de la agrupación*/
+
+#pagina {
+	width: 980px;
+	margin: 10px auto;
+	text-align: left;
+}
+
+/*Estilo de cabecera*/
+#cabecera {
+ display:block;
+ width: 500px;
+ margin: 50px auto;
+ text-align: center;
+ background: #DDDDDD;
+ border: 1px solid #999999
+ padding: 15px;
+ border-radius: 20px 0px; /*Modifica bordes de un box creador*/
+ box-shadow: rgb(150,150,150) 5px 5px;
+}
+
+#icon {
+	float: left;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding 5px;
+	width: 150px;
+
+
+}
+#titulo {
+	float:left;
+	font-family: "Courier New", monospace;
+	font-size: 70px:
+	text-shadow: rgb(0,0,150) 3px 3px 5px;
+}
+
+#menuCabecera {
+	clear:both;
+	background: #CCCCCC;
+	padding: 5px 15px;
+}
+
+#menuCabecera li {
+	display: inline-block;
+	list-style: none;
+	padding: 5px;
+	font: bold 14px verdana, sans-serif;
+}
+
+
+/*Estilo de barra lateral*/
+#barraLateral {
+	float: left;
+	width: 220px;
+	margin: 20px 0px;
+	padding: 20px;
+	background: #CCCCCC
+
+}
+
+/*Estilo seccion de 
+Articulos o eventos principales*/
+#seccionArticulos {
+	float:left;
+	width: 660px;
+	margin: 20px;
+	box-sizing: border-box;
+}
+
+
+
+#post{
+	object-fit: cover;
+	float: left;
+	border: 10px solid #3EC483;
+	background: #5DEAAB;
+	height: 100px;
+	width: 100px;
+	padding: 10px;
+	margin: 10px;
+
+	/*border-radius: 10%;*/
+
+}
+
+/*Estilo de pie de página*/
+
+#pie {
+	clear: both;
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid #999999;
+}
