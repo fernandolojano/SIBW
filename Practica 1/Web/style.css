@@ -3,45 +3,70 @@
 
 body {
 	font-family: 'Lato', sans-serif;
-	color: #2e354f;
+
 	font-size:18px;
 	line-height: 1.5;
 	padding: 0;
-	background-color:#ABB1B6;   /*Color Background principal*/
+	margin: 0;
+	background-color:#393637;   /*Color Background principal*/
+	overflow-x: hidden;
 	border: double 2px #943126;
 }
 
+
+
 .container {
+	object-fit: cover;
 	width: 100%;
-	margin: auto;
-	overflow: hidden;
-	/*border: double 2px #A569BD;*/
+	border: double 2px #A569BD;
 	
 
 }
 
-/*Header*/ 
-header {
-	background: #1A2028;   /*Color background header*/
-	color: #ABB1B6;		   /*Color fuente logo*/
-	padding-top: 30px;
-	min-height: 70px;
-	/*border-bottom: #1F2732 5px solid;  Borde adicional, se puede eliminar*/
+
+#headerImage {
+	background-image: url(imgs/Main.jpg);
+	position: relative;
+    min-height: 48em;
+    background-size: cover;
+    background-position: 60% 74%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
 }
 
-header a {
+#headerImage h2 {
+	font-size: 70px;
+    text-align: center;
+}
+
+#headerImage p {
+	font-size: 50px;
+	text-align: center;
+}
+
+
+/*Header*/ 
+header {
+	color: #ABB1B6;		   /*Color fuente logo*/
+	min-height: 70px;
+	
+}
+
+#supNav a {
 	color:#ABB1B6;      /*Color fuente submenu*/
-	text-decoration: none;
 	text-transform: uppercase;
+	text-decoration: none;
 	font-size: 15px;
 }
 
-header ul {
+#supNav ul {
 	margin:0;
 	padding:0;
 }
 
-header li {
+#supNav li {
 	float: left;
 	display: inline;
 	padding: 0 20px 0 20px;
@@ -49,25 +74,26 @@ header li {
 }
 
 
-header #logo {
+header #supNav {
+	border: double 2px #000000;
+	position: absolute;
+	background-color: #393637;
+	opacity: 0.4;
+	width: 100%;
 	float: left;
-
+	margin-top:-54rem;
 }
 
-header #logo {
-	margin:0;
-}
 
-header nav {
+#supNav nav {
 	float:right;
-	margin-top: 10px;
+	margin-top: 5px;
 }
 
 header a:hover {
 	color:#ffffff;
 	font-weight: bold;
 }
-
 
 
 
@@ -82,36 +108,19 @@ aside {
 	
 }
 */
-/*evento principal en la página (MainEvent)*/
-
-#mainEvent {
-	
-	min-height: 400px;
-	object-fit: scale-down;
-	background:url(imgs/Main.jpg) no-repeat center;
-	text-align: center;
-	color: #ffffff;
-}
-
-#mainEvent h1{
-	margin-top:  100px;
-	font-size: 55px;
-	margin-bottom: 10px;
-}
-
-#mainEvent p {
-	font-size: 20px;	
-}
 
 
 #events {
+	clear:both;
+	background-color: #F7F6F6;
 	width: 100%;
 	margin:5px;
+	border: double 2px #000000;
 
 }
 
 
-.box{
+#events .box{
 	float:left;
 	margin-top: 30px;
 	margin-bottom: 30px;
@@ -122,7 +131,7 @@ aside {
 }
 
 
-.box img{
+#events .box img{
   box-sizing: border-box;
   height: 250px;
   width: 95%;
@@ -149,8 +158,6 @@ aside {
 	opacity: 0;
 	transform: scale(0.2);
 	transition-all: 0.3s;
-
-
 
 }
 
@@ -186,10 +193,11 @@ aside {
 
 
 #pie {
+	clear: both;
 	padding: 20px;
 	margin-top: 20px;
 	color:#ffffff;
-	background-color: #395272;
+	background-color: #393637;
 	text-align: center;
 }
 
