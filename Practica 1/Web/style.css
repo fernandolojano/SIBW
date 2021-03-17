@@ -8,21 +8,25 @@ body {
 	line-height: 1.5;
 	padding: 0;
 	background-color:#ABB1B6;   /*Color Background principal*/
+	border: double 2px #943126;
 }
 
 .container {
-	width: 80%;
+	width: 100%;
 	margin: auto;
 	overflow: hidden;
+	/*border: double 2px #A569BD;*/
+	
+
 }
 
-/*Header*/
+/*Header*/ 
 header {
 	background: #1A2028;   /*Color background header*/
 	color: #ABB1B6;		   /*Color fuente logo*/
 	padding-top: 30px;
 	min-height: 70px;
-	border-bottom: #1F2732 5px solid;  /*Borde adicional, se puede eliminar*/
+	/*border-bottom: #1F2732 5px solid;  Borde adicional, se puede eliminar*/
 }
 
 header a {
@@ -65,11 +69,25 @@ header a:hover {
 }
 
 
+
+
+/* Barra auxiliar
+
+aside {
+	width: 30%;
+	height: 100%;
+	float: left;
+	margin:auto;
+	text-align: center;
+	
+}
+*/
 /*evento principal en la página (MainEvent)*/
 
 #mainEvent {
+	
 	min-height: 400px;
-	object-fit: cover;
+	object-fit: scale-down;
 	background:url(imgs/Main.jpg) no-repeat center;
 	text-align: center;
 	color: #ffffff;
@@ -87,28 +105,96 @@ header a:hover {
 
 
 #events {
-	margin-top: 20px;
+	width: 100%;
+	margin:5px;
+
 }
 
-#events .box{
-	float: left;
-	width: 30%;
-	padding:5px;
+
+.box{
+	float:left;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-bottom: 0;
+	width: 33.33%;
+	transition: 0.5s;
+	
+}
+
+
+.box img{
+  box-sizing: border-box;
+  height: 250px;
+  width: 95%;
+  padding: 10px;
+  object-fit: cover; 
+  background-color: #C6CFD0;
+  display: block;
+  overflow: hidden;
+  
+
+}
+
+.hiddenBox {
+	color: white;
+	position: relative;
+
+	top:0;
+	width: 50%;
+	padding:5%;
+	z-index: 10;
 	text-align: center;
+	margin-top: -250px;
+	margin-left: 50px;
+	opacity: 0;
+	transform: scale(0.2);
+	transition-all: 0.3s;
+
+
+
 }
 
-#events .box img{
-	object-fit: cover;
-	width: 200px;
+.hiddenBox .dateEv {
+	padding: 20px;
+	margin-top: 20px;
+	text-align: center;
+	opacity: 0;
+	transform: scale(0.2);
+	transition-all: 0.3s;
+	
 }
 
-footer {
+
+
+.box:hover  .hiddenBox{
+	opacity: 1;
+	transition: 0.3s;
+	transform: scale(1);
+}
+
+.box:hover .dateEv {
+	opacity: 1;
+	transition: 0.7s;
+	transform: scale(1);
+}
+
+.box:hover {
+	opacity: 0.5;
+	transition: 0.3s;
+
+}
+
+
+#pie {
 	padding: 20px;
 	margin-top: 20px;
 	color:#ffffff;
 	background-color: #395272;
 	text-align: center;
 }
+
+
+
 
 /*queries*/
 @media(max-width: 768px) {
@@ -124,5 +210,11 @@ footer {
 
 	#mainEvent h1 {
 		margin-top:40px;
+	}
+
+	
+	#events .box {
+		padding-left: 25%;
+		width: 80%;
 	}
 }
