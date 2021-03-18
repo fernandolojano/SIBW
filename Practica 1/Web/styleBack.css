@@ -1,124 +1,241 @@
 
-/*Declaración de parametros globales para todas las páginas*/
-header, section, footer, aside, nav, article{
-	display: block;
-}
+ 
 
 
-* {
-	margin: 0px;
-	padding: 0px;
-}
+body {
 
-
-h1 {
-	font: bold 20px verdana, sans-serif;
-}
-
-
-h2 {
-	font: bold 14px verdana, sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-size:18px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+	background-color:#393637;   /*Color Background principal*/
+	overflow-x: hidden;
+	border: double 2px #943126;
 }
 
 
 
-body{
-	margin: 0px;
-	fill: 0px;
-
-}
-
-/*Estilo de la agrupación*/
-
-#pagina {
-	width: 980px;
-	margin: 10px auto;
-	text-align: left;
-}
-
-/*Estilo de cabecera*/
-#cabecera {
- display:block;
- width: 500px;
- margin: 50px auto;
- text-align: center;
- background: #DDDDDD;
- border: 1px solid #999999
- padding: 15px;
- border-radius: 20px 0px; /*Modifica bordes de un box creador*/
- box-shadow: rgb(150,150,150) 5px 5px;
-}
-
-#icon {
-	float: left;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	padding 5px;
-	width: 150px;
-
-
-}
-#titulo {
-	float:left;
-	font-family: "Courier New", monospace;
-	font-size: 70px:
-	text-shadow: rgb(0,0,150) 3px 3px 5px;
-}
-
-#menuCabecera {
-	clear:both;
-	background: #CCCCCC;
-	padding: 5px 15px;
-}
-
-#menuCabecera li {
-	display: inline-block;
-	list-style: none;
-	padding: 5px;
-	font: bold 14px verdana, sans-serif;
-}
-
-
-/*Estilo de barra lateral*/
-#barraLateral {
-	float: left;
-	width: 220px;
-	margin: 20px 0px;
-	padding: 20px;
-	background: #CCCCCC
-
-}
-
-/*Estilo seccion de 
-Articulos o eventos principales*/
-#seccionArticulos {
-	float:left;
-	width: 660px;
-	margin: 20px;
-	box-sizing: border-box;
-}
-
-
-
-#post{
+.container1 {
+	
 	object-fit: cover;
-	float: left;
-	border: 10px solid #3EC483;
-	background: #5DEAAB;
-	height: 100px;
-	width: 100px;
-	padding: 10px;
-	margin: 10px;
+	width: 100%;
+	border: double 2px #000000;
+	
+ 
+}
 
-	/*border-radius: 10%;*/
+
+.container2 {
+	object-fit: cover;
+	width: 100%;
+	border: double 2px #A569BD;
+	
+ 
+}
+
+
+.headerImage {
+
+	background-image: url(imgs/Main.jpg);
+	position: relative;
+    min-height: 48em;
+    background-size: cover;
+    background-position: 60% 74%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 
 }
 
-/*Estilo de pie de página*/
+.headerImage h2 {
+	font-size: 70px;
+    text-align: center;
+}
 
-#pie {
-	clear: both;
+.headerImage p {
+	font-size: 50px;
 	text-align: center;
+}
+
+
+/*Header*/ 
+header {
+	color: #ABB1B6;		   /*Color fuente logo*/
+	min-height: 70px;
+	
+}
+
+.supNav a {
+	color:#ABB1B6;      /*Color fuente submenu*/
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.supNav ul {
+	margin:0;
+	padding:0;
+}
+
+.supNav li {
+	float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+
+}
+
+
+header .supNav {
+	border: double 2px #000000;
+	position: absolute;
+	background-color: #393637;
+	opacity: 0.4;
+	width: 100%;
+	float: left;
+	margin-top:-54rem;
+}
+
+
+.supNav nav {
+	float:right;
+	margin-top: 5px;
+}
+
+header a:hover {
+	color:#ffffff;
+	font-weight: bold;
+}
+
+
+
+/* Barra auxiliar*/
+
+aside {
+	width: 30%;
+	height: 100%;
+	float: left;
+	margin:auto;
+	text-align: center;
+	
+	
+}
+
+
+
+.events {
+	clear:both;
+	background-color: #F7F6F6;
+	width: 100%;
+	margin:5px;
+	border: double 2px #000000;
+
+}
+
+
+.events .box{
+	float:left;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-bottom: 0;
+	width: 33.33%;
+	transition: 0.5s;
+	
+}
+
+
+.events .box img{
+  box-sizing: border-box;
+  height: 250px;
+  width: 95%;
+  padding: 10px;
+  object-fit: cover; 
+  background-color: #C6CFD0;
+  display: block;
+  overflow: hidden;
+  
+
+}
+
+.hiddenBox {
+	color: white;
+	position: relative;
+
+	top:0;
+	width: 50%;
+	padding:5%;
+	z-index: 10;
+	text-align: center;
+	margin-top: -250px;
+	margin-left: 50px;
+	opacity: 0;
+	transform: scale(0.2);
+	transition-all: 0.3s;
+
+}
+
+.hiddenBox .dateEv {
 	padding: 20px;
-	border-top: 2px solid #999999;
+	margin-top: 20px;
+	text-align: center;
+	opacity: 0;
+	transform: scale(0.2);
+	transition-all: 0.3s;
+	
+}
+
+
+
+.box:hover  .hiddenBox{
+	opacity: 1;
+	transition: 0.3s;
+	transform: scale(1);
+}
+
+.box:hover .dateEv {
+	opacity: 1;
+	transition: 0.7s;
+	transform: scale(1);
+}
+
+.box:hover {
+	opacity: 0.5;
+	transition: 0.3s;
+
+}
+
+
+.pie {
+	clear: both;
+	padding: 20px;
+	margin-top: 20px;
+	color:#ffffff;
+	background-color: #393637;
+	text-align: center;
+}
+
+
+
+
+/*queries*/
+@media(max-width: 768px) {
+	header #logo, header nav, header nav li, #events .box {
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	header {
+		padding-bottom: 20px;
+	}
+
+	#mainEvent h1 {
+		margin-top:40px;
+	}
+
+	
+	#events .box {
+		padding-left: 25%;
+		width: 80%;
+	}
 }
