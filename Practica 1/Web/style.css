@@ -46,34 +46,31 @@ header {
 }
 
 .headerBackground {
-  z-index:1;
+  z-index:10;
   grid-column: 1 / 9;
   grid-row: 3 / 36;
+ 
 /*display: grid;
   grid-template-columns: subgrid;
   grid-template-rows: repeat(3, 3%);*/
 }
 
-/*
-.backgroundTXT {
-  z-index:2;
+.headerBackgroundMain {
+  z-index:10;
   grid-column: 1 / 9;
   grid-row: 3 / 36;
-display: grid;
-  grid-template-columns: subgrid;
-  grid-template-rows: repeat(3, 3%);
+  border: double 2px #943126;
 
 }
 
-*/
 
 
 
 .textBackground {
-	z-index:5;
-	grid-column: 3 / 5;
+	z-index:1;
+	grid-column: 1 / 5;
 	grid-row: 10 / 25;
-	/*border: double 2px #943126;*/
+	border: double 2px #943126;
 
 }
 
@@ -81,28 +78,28 @@ display: grid;
 	z-index:4;
 	grid-column: 1 / 5;
 	grid-row: 10 / 25;
-	/*border: double 2px #000000;*/
+	border: double 2px #000000;
 
 }
 
 
 .asideBar{
   grid-column:1 / 3;
-  grid-row: 36 / 75;
+  grid-row: 36 / 74;
   /*border: double 2px #943126;*/
 }
 
 
 .events {
   grid-column: 3/ 9;
-  grid-row: 36 / 75;
+  grid-row: 36 / 74;
   /*border: double 2px #943126;*/
 }
 
 
 .footer {
   grid-column: 1 / 9;
-  grid-row: 70 / 80;
+  grid-row: 74 / 80;
   /*border: double 2px #943126;*/
 }
 
@@ -132,22 +129,7 @@ display: grid;
 	grid-row: 15 / 75;
 	/*border: double 2px #943126;*/
 }
-/*
-#photoDesc1 {
-	z-index: 1;
-	grid-column:6 / 9;
-	grid-row: 20/ 30;
-	border: double 2px #943126;	
 
-}
-
-#photoDesc2 {
-	z-index: 2;
-	grid-column:6 / 9;
-	grid-row: 48 / 60;
-	border: double 2px #000000;	
-
-}*/
 
 .printFooter {
 	z-index: 0;
@@ -187,11 +169,11 @@ Diseño imagen principal
 	text-align: center;
 }
 
+
 .textBackground {
-	
 	background-color: #262329;
 	opacity: 0.7;
-	transform: scale(0);
+	transform: scale(1);
 	transition: 0.3s;
 }
 
@@ -205,39 +187,44 @@ Diseño imagen principal
 
 #p1, #p2, #p3, #p4, #p5{
 	text-align: center;
-	transform: scale(1);
+	transform: scale(0);
 	transition: 0.5s;
 }
 
 
-.header:hover .textBackground {
+.headerBackgroundMain:hover .textBackground {
 	transform: scale(1);
     transition: 0.3s;
     
 }
 
-.header:hover .textBox #p1 {
+.headerBackgroundMain:hover .textBox #p1 {
 	transform: scale(1);
 	transition: 0.5s;
 
 }
 
-.header:hover #p2 {
+.headerBackgroundMain:hover #p2 {
 	transform: scale(1);
 	transition: 0.8s;
 	
 }
 
 
-.header:hover #p3 {
+.headerBackgroundMain:hover #p3 {
 	transform: scale(1);
 	transition: 1s;
 	
 }
 
-.header:hover #p4 {
+.headerBackgroundMain:hover #p4 {
 	transform: scale(1);
 	transition: 1.3s;
+}
+
+.headerBackgroundMain:hover #p5 {
+	transform: scale(1);
+	transition: 1.6s;
 }
 
 
@@ -409,7 +396,7 @@ Diseño Pie de página
 
 .footer {
 	clear: both;
-	padding: 20px;
+	font-size: 25px;
 	margin:0;
 	color:#f1f1f2;
 	background-color: #1b1b20;
@@ -417,11 +404,37 @@ Diseño Pie de página
 }
 
 
+.footer img {
+	transform: scale(0.5);
+}
 
+.footer ul {
 
+	margin-top:0%;
+	margin-left: 40%;
+}
 
+.footer li {
+	float: left;
+	display: inline;
+	padding: 0 0px 0 0px;
 
+}
 
+.footer footer {
+
+	float:right;
+	margin-top: 65px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+
+}
+
+.footer p {
+  
+  font-size: 0.5em;
+}
 
 
 
@@ -440,14 +453,14 @@ Apartados adicionales de diseño de eventos
 	text-align: center;
 }
 
-#descriptionContent h5 .printContent h5{
+#descriptionContent h5, .printContent h5{
 	margin:0;
-	font-size: 150%;
+	font-size: 120%;
 }
 
-#descriptionContent h6 .printContent h6{
+#descriptionContent h6,  .printContent h6{
 	margin:0;
-	font-size: 125%;
+	font-size: 110%;
 }
 
 
@@ -474,7 +487,7 @@ Apartados adicionales de diseño de eventos
 	background:transparent;
     display: flex; 
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
 }
 
 .background {
