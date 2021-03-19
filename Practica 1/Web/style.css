@@ -21,41 +21,66 @@ SELECCIÓN DE DIMENSIONES DE CADA APARTADO
 .container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(60, minmax(50px, auto));
+  grid-template-rows: repeat(79, minmax(25px, auto));
 }
 
 
-.header {
+header {
   z-index: 0;
-  display: grid;
   grid-column: 1 / 9;
-  grid-row: 1 / 21;
-  border: double 2px #000000;
-  /*grid-template-columns: subgrid;
+  grid-row: 1 / 36;
+ /*border: double 2px #000000;
+  display: grid;
+  grid-template-columns: subgrid;
   grid-template-rows: repeat(3, 3%);*/
 }
 
 
+
 .menuTop {
+	z-index: 4;
 	grid-column: 1 / 9;
-  	grid-row: 1 / 2;	
-  	border: double 2px #943126;
+  	grid-row: 1 / 3;	
+  	/*border: double 2px #943126;*/
 
 }
+
+.headerBackground {
+  z-index:1;
+  grid-column: 1 / 9;
+  grid-row: 3 / 36;
+/*display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: repeat(3, 3%);*/
+}
+
+/*
+.backgroundTXT {
+  z-index:2;
+  grid-column: 1 / 9;
+  grid-row: 3 / 36;
+display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: repeat(3, 3%);
+
+}
+
+*/
+
 
 
 .textBackground {
 	z-index:5;
-	grid-column: 1 / 5;
-	grid-row: 9 / 13;
-	border: double 2px #943126;
+	grid-column: 3 / 5;
+	grid-row: 10 / 25;
+	/*border: double 2px #943126;*/
 
 }
 
 .textBox {
 	z-index:4;
 	grid-column: 1 / 5;
-	grid-row: 9 / 13;
+	grid-row: 10 / 25;
 	/*border: double 2px #000000;*/
 
 }
@@ -63,23 +88,75 @@ SELECCIÓN DE DIMENSIONES DE CADA APARTADO
 
 .asideBar{
   grid-column:1 / 3;
-  grid-row: 21 / 60;
-  border: double 2px #943126;
+  grid-row: 36 / 75;
+  /*border: double 2px #943126;*/
 }
 
 
 .events {
   grid-column: 3/ 9;
-  grid-row: 21 / 60;
-  border: double 2px #943126;
+  grid-row: 36 / 75;
+  /*border: double 2px #943126;*/
 }
 
 
 .footer {
   grid-column: 1 / 9;
-  grid-row: 60 / 61;
-  border: double 2px #943126;
+  grid-row: 70 / 80;
+  /*border: double 2px #943126;*/
 }
+
+
+/******************Version Impresion*******************/
+
+
+.printLogoBar {
+	z-index: 1;
+	grid-column: 1 / 9;
+  	grid-row: 1 / 3;
+  	/*border: double 2px #943126;*/
+
+}
+
+.printImgHeader {
+	z-index: 0;
+	grid-column: 1 / 9;
+	grid-row: 1 / 15;
+	/*border: double 2px #943126;*/
+
+}
+
+.printContent {
+	z-index: 0;
+	grid-column: 1 / 9;
+	grid-row: 15 / 75;
+	/*border: double 2px #943126;*/
+}
+/*
+#photoDesc1 {
+	z-index: 1;
+	grid-column:6 / 9;
+	grid-row: 20/ 30;
+	border: double 2px #943126;	
+
+}
+
+#photoDesc2 {
+	z-index: 2;
+	grid-column:6 / 9;
+	grid-row: 48 / 60;
+	border: double 2px #000000;	
+
+}*/
+
+.printFooter {
+	z-index: 0;
+	grid-column: 1 /9;
+	grid-row: 70 / 80;
+	/*border: double 2px #943126;*/	
+}
+
+
 
 
 /***********************************************************
@@ -91,7 +168,7 @@ Diseño imagen principal
 	position: relative;
     min-height: 48em;
     background-size: cover;
-    background-position: 60% 74%;
+    background-position: 60% 80%;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -174,14 +251,15 @@ Diseño imagen menu y header
 .menuTop {
 	float: left;
 	z-index: 1;
-	/*background-color: #1b1b20;*/
+	background-color: #1b1b20;
+	opacity: 0.7;
 	color:#f1f1f2;
 
 }
 
 .menuTop h1 {
 	margin:0;
-	opacity: 1;
+	
 }
 
 
@@ -267,11 +345,11 @@ Diseño Cuadro de Eventos
 }
 
 
-.events .box img{
+.eventImage{
   box-sizing: border-box;
   border-radius: 5%;
-  height: 220px;
-  width: 95%;
+  height: 240px;
+  width: 94%;
   padding: 2%;
   background-color: #C6CFD0;
 }
@@ -333,8 +411,8 @@ Diseño Pie de página
 	clear: both;
 	padding: 20px;
 	margin:0;
-	color:#ffffff;
-	background-color: #393637;
+	color:#f1f1f2;
+	background-color: #1b1b20;
 	text-align: center;
 }
 
@@ -344,14 +422,169 @@ Diseño Pie de página
 
 
 
-/*
-.five {
-  grid-column: 2;
-  grid-row: 4;
-  border: double 2px #943126;
+
+
+
+
+/***********************************************************
+Apartados adicionales de diseño de eventos
+************************************************************/
+
+#descriptionContent {
+		margin:0;
+		color:#f1f1f2;
 }
-.six {
-  grid-column: 3;
-  grid-row: 4;
-  border: double 2px #943126;
-}*/
+
+#descriptionContent h4, .printContent h4{
+	font-size: 200%;
+	text-align: center;
+}
+
+#descriptionContent h5 .printContent h5{
+	margin:0;
+	font-size: 150%;
+}
+
+#descriptionContent h6 .printContent h6{
+	margin:0;
+	font-size: 125%;
+}
+
+
+.imageDescription {
+	box-sizing: border-box;
+	border-radius: 5%;
+	height: 300px;
+	width: 300px;
+	padding: 2%;
+	background-color: #C6CFD0;
+
+}
+
+.imageView {
+    background-image: url(imgs/rome6.jpg);
+	position: relative;
+    min-height: 48em;
+    background-size: cover;
+    background-position: 70% 74%;
+    overflow: hidden;
+}
+
+.headerBackground {
+	background:transparent;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.background {
+	background:#83888d;
+    overflow: hidden;
+	opacity: 0;
+	transition: 0.3s;
+	width: 100%;
+	height: 100%;
+}
+
+
+.backgroundTXT {
+  color: white;
+  font-size: 800%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity:0;
+  transition: 0.3s;
+}
+
+
+.headerBackground:hover .backgroundTXT{
+	opacity: 1;
+	transition: 0.7s;
+}
+
+
+
+.headerBackground:hover .background {
+	opacity: 0.4;
+	transition: 0.3s;
+}
+
+
+
+
+.textWrap {
+	float:right;
+	margin:1%;
+}
+
+
+
+
+/*******Diseño de pagina de Impresión*****************/
+
+
+.printLogoBar {
+	/*border: double 2px #943126;*/
+
+}
+
+
+.printImgHeader {
+	background-image: url(imgs/rome6.jpg);
+	position: relative;
+    min-height: 20em;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    /*border: double 2px #943126;*/
+}
+
+.printContent {
+	background-color: #f1f1f2;
+	color: #1b1b20;
+	/*border: double 2px #943126;*/
+
+}
+
+
+
+.photoDesc1 {
+	float:right;
+	margin:10px;
+  	width: 370px;
+	align-content: center;
+  	/*border: double 2px #943126;*/
+
+}
+
+.photoDesc1 img {
+    height: 450px;
+}
+
+.photoDesc1 footer, .photoDesc2 footer {
+	margin:0;
+	text-align: center;
+}
+
+
+.photoDesc2 {
+	clear: both;
+	float:right;
+	margin:10px;
+  	width: 455px;
+	align-content: center;
+  	/*border: double 2px #000000;*/
+}
+
+
+.photoDesc2 img {
+   height: 330px;
+}
+
+
+.printFooter {
+	background-color: #f1f1f2;
+}
