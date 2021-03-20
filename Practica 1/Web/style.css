@@ -29,58 +29,59 @@ header {
   z-index: 0;
   grid-column: 1 / 9;
   grid-row: 1 / 36;
- /*border: double 2px #000000;
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-template-rows: repeat(3, 3%);*/
 }
 
-
+.backgroundMenu {
+	z-index: 1;
+	grid-column: 1 / 9;
+  	grid-row: 1 / 3;
+}
 
 .menuTop {
-	z-index: 4;
-	grid-column: 1 / 9;
-  	grid-row: 1 / 3;	
+  z-index: 3;
+  grid-column: 1 / 9;
+  grid-row: 1 / 3;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: subgrid;
   	/*border: double 2px #943126;*/
 
 }
 
+
+
 .headerBackground {
-  z-index:10;
+  z-index:8;
   grid-column: 1 / 9;
   grid-row: 3 / 36;
- 
-/*display: grid;
-  grid-template-columns: subgrid;
-  grid-template-rows: repeat(3, 3%);*/
 }
 
 .headerBackgroundMain {
   z-index:10;
+  display: grid;
   grid-column: 1 / 9;
   grid-row: 3 / 36;
-  border: double 2px #943126;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: subgrid;
+ /*border: double 2px #943126;*/
 
 }
 
 
-
+.textBox {
+	z-index:1;
+	grid-column: 1 / 5;
+	grid-row: 10 / 23;
+}
 
 .textBackground {
 	z-index:1;
 	grid-column: 1 / 5;
-	grid-row: 10 / 25;
-	border: double 2px #943126;
+	grid-row: 10 / 22;
+
 
 }
 
-.textBox {
-	z-index:4;
-	grid-column: 1 / 5;
-	grid-row: 10 / 25;
-	border: double 2px #000000;
-
-}
 
 
 .asideBar{
@@ -116,7 +117,7 @@ header {
 }
 
 .printImgHeader {
-	z-index: 0;
+
 	grid-column: 1 / 9;
 	grid-row: 1 / 15;
 	/*border: double 2px #943126;*/
@@ -124,7 +125,7 @@ header {
 }
 
 .printContent {
-	z-index: 0;
+
 	grid-column: 1 / 9;
 	grid-row: 15 / 75;
 	/*border: double 2px #943126;*/
@@ -147,16 +148,9 @@ Diseño imagen principal
 
 .header {
 	background-image: url(imgs/Main.jpg);
-	position: relative;
     min-height: 48em;
     background-size: cover;
-    background-position: 60% 80%;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    color: #ffffff;
-    opacity: 1;
-
+    background-position: 60% 70%;
 }
 
 .header h2 {
@@ -172,9 +166,8 @@ Diseño imagen principal
 
 .textBackground {
 	background-color: #262329;
-	opacity: 0.7;
-	transform: scale(1);
-	transition: 0.3s;
+	opacity: 0;
+	transition: 1s;
 }
 
 
@@ -227,6 +220,12 @@ Diseño imagen principal
 	transition: 1.6s;
 }
 
+.headerBackgroundMain:hover .textBackground {
+	opacity: 0.9;
+	transition: 0.3s;
+}
+
+
 
 
 
@@ -234,27 +233,38 @@ Diseño imagen principal
 Diseño imagen menu y header
 ************************************************************/
 
+.backgroundMenu {
+	background-color: #1b1b20;
+	height: 100%;
+	width: 100%;
+	opacity:0.7;
+}
+
 
 .menuTop {
 	float: left;
-	z-index: 1;
-	background-color: #1b1b20;
-	opacity: 0.7;
 	color:#f1f1f2;
 
 }
 
-.menuTop h1 {
-	margin:0;
-	
+.logoMenu {
+	object-fit: cover;
+	height: 100%;
+	grid-column: 1 / 3;
+	/*border: double 2px #943126;*/
+}
+.menuTop h1{
+	text-align: center;
+	font-size: 250%;
+	grid-row: 1 / 3;
+	grid-column: 3 / 7;
 }
 
 
 .menuTop nav {
-	float:right;
-	
+	grid-row: 1 / 3;
+	grid-column: 7 / 9;
 }
-
 
 .menuTop a {
 	color:#ABB1B6;      /*Color fuente submenu*/
@@ -265,16 +275,16 @@ Diseño imagen menu y header
 
 
 .menuTop  li {
-	float: left;
+	float:right;
 	display: inline;
-	padding: 0 20px 0 20px;
+	padding: 0 10px 0 20px;
 
 }
 
 
 
 
-.menuTop a:hover {
+ .menuTop a:hover {
 	color:#ffffff;
 	font-weight: bold;
 }
@@ -320,14 +330,17 @@ Diseño Cuadro de Eventos
 	clear:both;
 	background-color:#262329;
 	margin:0;
+
 }
 
 
 .events .box{
+
 	float:left;
-	margin-top: 5%;
-	margin-bottom: 5%;
-	width: 33.33%;
+	margin-left: 2.5%;
+	margin-top: 4%;
+	margin-bottom: 4%;
+	width: 30%;
 	transition: 0.5s;	
 }
 
@@ -335,46 +348,59 @@ Diseño Cuadro de Eventos
 .eventImage{
   box-sizing: border-box;
   border-radius: 5%;
-  height: 240px;
-  width: 94%;
+  height: 260px;
+  width: 100%;
   padding: 2%;
   background-color: #C6CFD0;
 }
 
 
 .hiddenBox {
+	margin-top: -269px;
+	position: relative;
+	background-color: #262329;
+    overflow: hidden;
+	opacity:0;
+	transition: 0.3s;
+	width: 100%;
+	height: 260px;
+	
+
+}
+
+.hiddenBoxTXT{
 	color:white;
+	background-color: transparent;
 	width: 95%;
 	z-index: 1;
 	text-align: center;
 	margin-top: -230px;
 	opacity: 0;
 	transform: scale(0.2);
-	transition-all: 0.3s;
-
-}
-
-
-.hiddenBox .dateEv {
-	padding: 20px;
-	margin-top: 20px;
-	text-align: center;
-	opacity: 0;
-	transform: scale(0.2);
-	transition-all: 0.3s;
-	
-}
-
-
-.box:hover {
-	opacity: 0.5;
 	transition: 0.3s;
 
 }
 
 
+.dateEv {
+	color:white;
+	padding: 20px;
+	margin-top: 20px;
+	text-align: center;
+	opacity: 1;
+	transform: scale(0);
+	transition: 0.3s;
+	
+}
 
-.box:hover  .hiddenBox{
+
+
+.box:hover .hiddenBox{
+	opacity: 0.4;
+	transition: 0.3s;
+}
+
+.box:hover .hiddenBoxTXT{
 	opacity: 1;
 	transition: 0.3s;
 	transform: scale(1);
@@ -382,7 +408,6 @@ Diseño Cuadro de Eventos
 
 
 .box:hover .dateEv {
-	opacity: 1;
 	transition: 0.7s;
 	transform: scale(1);
 }
@@ -534,14 +559,22 @@ Apartados adicionales de diseño de eventos
 }
 
 
+.print{
+	z-index: 4;
+	margin-top: -4%;
+	float:right;
+	transform: scale(0.5);
+
+
+
+}
 
 
 /*******Diseño de pagina de Impresión*****************/
 
 
 .printLogoBar {
-	/*border: double 2px #943126;*/
-
+	margin:auto;
 }
 
 
