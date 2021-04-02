@@ -311,18 +311,6 @@ Diseño barra lateral auxiliar
 	color:#727a84;
 }
 
-.mainTitle {
-	color: #727a84;
-	font-size: 90%;
-
-}
-
-
-
-.opinion {
-	color:#f1f1f2;
-	font-size: 80%;
-}
 
 
 
@@ -423,6 +411,112 @@ Diseño Cuadro de Eventos
 	width: 48px;
 	transform: scale(0.25);
 	float: right;
+}
+
+
+
+
+/***********************************************************
+Diseño Panel Oculto
+************************************************************/
+
+
+.commentsPanel {
+	clear:both;
+	float:right;
+	z-index: 5;
+	grid-column: 13 / 17;
+    grid-row: 36 / 74;
+	height: 0%;
+	opacity: 0.3;
+	text-align: center;
+	background-color: #49405d;
+	color: white;
+	transition: 0.7s;
+
+}
+
+.nameSection{
+	padding-bottom: 10%;
+	color: white;
+	font-size: 200%;
+	
+}
+
+#buttonOpen {
+	z-index: 6;
+	position: absolute;
+	margin-left: 93%;
+	margin-top: 60.5%;
+	background-color: transparent;
+	background-size: contain;
+	cursor: pointer;
+	transform: scale(0.26);		
+}
+
+
+
+.commentsPanel #buttonClose {
+	
+	margin-left: -85%;
+	margin-top: 60.5%;
+	color: aliceblue;
+	cursor:pointer;
+	right: 25px;
+	font-size: 36px;
+}
+
+
+.mainTitle {
+	color: #727a84;
+	font-size: 140%;
+
+}
+
+
+.opinion {
+	color:#f1f1f2;
+	font-size: 80%;
+	text-align: left;
+	padding: 10%;
+	border: double 2px #943126;
+}
+
+
+
+
+
+#nuevoComentario {
+    width: 100%;
+    margin: 5px;
+    background: rgba(0,0,0, 0.4);
+    box-sizing: border-box;
+    margin-top: 30px;
+    border-radius: 7px;
+}
+
+
+
+#nuevoComentario input , textarea {
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 9px;
+    box-sizing: 17px;
+    border: none;
+	list-style-type: none;
+	
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#boton {
+    background: black;
+    color: white;
+    padding: 20px;
 }
 
 
@@ -572,18 +666,14 @@ Apartados adicionales de diseño de eventos
 
 
 .print{
-	z-index: 4;
-	margin-top: -4%;
-	float:right;
-	transform: scale(0.5);
-
+	z-index: 6;
+	position: absolute;
+	margin-left: 18%;
+	margin-top: 63%;
+	background-color: transparent;
+	background-size: contain;
+	transform: scale(0.55);
 }
-
-.panelComentarios {
-	width: 10%;
-	
-}
-
 
 
 

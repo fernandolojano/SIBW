@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Evento</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="code.js" defer></script>
+	<script type="text/javascript" src="code.js" defer></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -32,9 +32,10 @@
   
   <aside class="asideBar">
   	<h2>Reseñas</h2>
-  	<article class="Opinion">
+  	<article class="opinion">
   		<h3 class="mainTitle">The best time of my life</h3>
-	  		<p class="opinion">
+		
+	  		<p>
 	            <cite>
 	                I enjoyed everything about the event I went.
 	                <br>The place was amazing and the views where awesome.
@@ -43,93 +44,13 @@
 	            </cite>
 	        </p>
   	</article>
-
-
-  	<article class="Opinion">
-  		<h3 class="mainTitle">The best time of my life</h3>
-	  		<p class="opinion">
-	            <cite>
-	                I enjoyed everything about the event I went.
-	                <br>The place was amazing and the views where awesome.
-	                <br>The people I met made the whole event worth every pound I paid for it.
-	                <br><small>Lauren Oliver</small>
-	            </cite>
-	        </p>
-  	</article>
-
-
-  	<article class="Opinion">
-  		<h3 class="mainTitle">The best time of my life</h3>
-	  		<p class="opinion">
-	            <cite>
-	                I enjoyed everything about the event I went.
-	                <br>The place was amazing and the views where awesome.
-	                <br>The people I met made the whole event worth every pound I paid for it.
-	                <br><small>Lauren Oliver</small>
-	            </cite>
-	        </p>
-  	</article>
-
-  	<article class="Opinion">
-  		<h3 class="mainTitle">The best time of my life</h3>
-	  		<p class="opinion">
-	            <cite>
-	                I enjoyed everything about the event I went.
-	                <br>The place was amazing and the views where awesome.
-	                <br>The people I met made the whole event worth every pound I paid for it.
-	                <br><small>Lauren Oliver</small>
-	            </cite>
-	        </p>
-  	</article>
-
-
-  	<article class="Opinion">
-  		<h3 class="mainTitle">The best time of my life</h3>
-	  		<p class="opinion">
-	            <cite>
-	                I enjoyed everything about the event I went.
-	                <br>The place was amazing and the views where awesome.
-	                <br>The people I met made the whole event worth every pound I paid for it.
-	                <br><small>Lauren Oliver</small>
-	            </cite>
-	        </p>
-  	</article>
-
-
-
-  	<article class="Opinion">
-  		<h3 class="mainTitle">The best time of my life</h3>
-	  		<p class="opinion">
-	            <cite>
-	                I enjoyed everything about the event I went.
-	                <br>The place was amazing and the views where awesome.
-	                <br>The people I met made the whole event worth every pound I paid for it.
-	                <br><small>Lauren Oliver</small>
-	            </cite>
-	        </p>
-  	</article>
-
-  	<article class="Opinion">
-  		<h3 class="mainTitle">The best time of my life</h3>
-	  		<p class="opinion">
-	            <cite>
-	                I enjoyed everything about the event I went.
-	                <br>The place was amazing and the views where awesome.
-	                <br>The people I met made the whole event worth every pound I paid for it.
-	                <br><small>Lauren Oliver</small>
-	            </cite>
-	        </p>
-  	</article>
-
-  	
-  	
   	
   </aside>
 
 
-  <div class="events">
+  <div class="events" >
   	<div id="descriptionContent">
-  		<h4>Descubriendo Roma</h4>
+	  <h4>Descubriendo Roma</h4>
 	  	<h5>Organizador: Amiee Betts</h5>
 	  	<h6>Fecha: 1 de Enero</h6>
 
@@ -169,9 +90,63 @@
 	  
 	</div>
   </div>
+  <div class="print">
+  	<a href="evento_imprimir.html">
+	 	<img src="imgs/printer.png">
+	</a>
+  </div>
+		 
+	  
+	
+  <button id="buttonOpen" >
+		<img src="imgs/comment-publication.png">
+  </button>
+  
+		
+  <div id="myCommentsPanel" class="commentsPanel">
+		<a id="buttonClose" >x</a>
+	  	<p class="nameSection">Reseñas</p>
+	  
+	  	<article class="opinion">
+  		<h3 class="mainTitle">The best time of my life</h3>
+			<h4 class="authorOpinion"><i>Rebeca Watson</i></h4>
+		<h5 class="dateOpinion">20/01/2018</h5>
+	  		<p>
+	            <cite>
+	                I enjoyed everything about the event I went.
+	                <br>The place was amazing and the views where awesome.
+	                <br>The people I met made the whole event worth every pound I paid for it.
+	            </cite>
+	        </p>
+  	</article>
+	  
+	<article class="opinion">
+  		<h3 class="mainTitle">The best time of my life</h3>
+			<h4 class="authorOpinion"><i>Rebeca Watson</i></h4>
+		<h5 class="dateOpinion">20/01/2018</h5>
+	  		<p>
+	            <cite>
+	                I enjoyed everything about the event I went.
+	                <br>The place was amazing and the views where awesome.
+	                <br>The people I met made the whole event worth every pound I paid for it.
+	            </cite>
+	        </p>
+  	</article>
+	  
+	<form  id="nuevoComentario">
+        <h2>Nuevo Comentario</h2>
+		<ul>
+			<li><input type="text" name="Nombre" placeholder="Nombre" required></li>
+			<li><input type="text" name="Correo" placeholder="correo" required></li>
+			<li><textarea name="Comentario" placeholder="Escribe aquí tu comentario" required></textarea></li>
+		</ul>
+        
+       
+       <input type="submit" value="Enviar" id="boton">
 
-	<button class="commentsButton" 
- <div class="panelComentarios"><img src="imgs/comment-publication.png"></div>
+    </form>
+	
+  </div>
 
 
   <footer class="footer">
