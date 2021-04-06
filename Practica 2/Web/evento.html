@@ -26,9 +26,9 @@
   <header class="imageView"></header>
 
   <div class="headerBackground">
-  	<div class="backgroundTXT">ROMA</div>
   	<div class="background"></div>
-</div>
+  	 <div class="backgroundTXT">ROMA</div>
+  </div>
   
   <aside class="asideBar">
   	<h2>Reseñas</h2>
@@ -106,8 +106,20 @@
   <div id="myCommentsPanel" class="commentsPanel">
 		<a id="buttonClose" >x</a>
 	  	<p class="nameSection">Reseñas</p>
+	  <form  id="nuevoComentario">
+        <h2>Nuevo Comentario</h2>
+		<ul>
+			<li><input type="text" id="Nombre"  placeholder="Nombre" required></li>
+			<li><input type="text" id="Correo"  placeholder="correo" required></li>
+			<li><textarea id="Comentario"  placeholder="Escribe aquí tu comentario" required></textarea></li>
+		</ul>
+        
+       
+       <button type="submit" id="boton">Enviar</button>
+
+    </form>
 	  
-	  	<article class="opinion">
+	 <article class="opinion">
   		<h3 class="mainTitle">The best time of my life</h3>
 			<h4 class="authorOpinion"><i>Rebeca Watson</i></h4>
 		<h5 class="dateOpinion">20/01/2018</h5>
@@ -132,19 +144,6 @@
 	            </cite>
 	        </p>
   	</article>
-	  
-	<form  id="nuevoComentario">
-        <h2>Nuevo Comentario</h2>
-		<ul>
-			<li><input type="text" name="Nombre" placeholder="Nombre" required></li>
-			<li><input type="text" name="Correo" placeholder="correo" required></li>
-			<li><textarea name="Comentario" placeholder="Escribe aquí tu comentario" required></textarea></li>
-		</ul>
-        
-       
-       <input type="submit" value="Enviar" id="boton">
-
-    </form>
 	
   </div>
 

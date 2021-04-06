@@ -1,5 +1,4 @@
 
-
 body {
 
 	font-family: 'Lato', sans-serif;
@@ -9,7 +8,6 @@ body {
 	margin: 0;
 	overflow-x: hidden;
 	/*background-color:#393637;  Color Background principal*/
-	
 	/*border: double 2px #943126;*/
 }
 
@@ -59,12 +57,11 @@ header {
 .headerBackgroundMain {
   z-index:10;
   display: grid;
-  grid-column: 1 / 10;
+  grid-column: 1 / 17;
   grid-row: 3 / 36;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: subgrid;
- /*border: double 2px #943126;*/
-
+ 
 }
 
 
@@ -84,6 +81,7 @@ header {
 
 
 .asideBar{
+  z-index:1;
   grid-column:1 / 4;
   grid-row: 36 / 74;
   /*border: double 2px #943126;*/
@@ -91,19 +89,15 @@ header {
 
 
 .events {
+  z-index:1;
   grid-column: 4/ 17;
   grid-row: 36 / 74;
   /*border: double 2px #943126;*/
 }
 
-.panelComentarios {
-	grid-column: 16 / 17;
-	grid-row: 35 / 39;
-	border: double 2px #943126;
-}
-
 
 .footer {
+  z-index:1;
   grid-column: 1 / 17;
   grid-row: 74 / 80;
   /*border: double 2px #943126;*/
@@ -406,15 +400,6 @@ Diseño Cuadro de Eventos
 }
 
 
-.panelComentarios {
-	height: auto;
-	width: 48px;
-	transform: scale(0.25);
-	float: right;
-}
-
-
-
 
 /***********************************************************
 Diseño Panel Oculto
@@ -422,17 +407,14 @@ Diseño Panel Oculto
 
 
 .commentsPanel {
-	clear:both;
-	float:right;
-	z-index: 5;
+	z-index: 0;
 	grid-column: 13 / 17;
     grid-row: 36 / 74;
-	height: 0%;
-	opacity: 0.3;
+	height: 100%;
+	opacity: 0;
 	text-align: center;
 	background-color: #49405d;
 	color: white;
-	transition: 0.7s;
 
 }
 
@@ -445,9 +427,11 @@ Diseño Panel Oculto
 
 #buttonOpen {
 	z-index: 6;
-	position: absolute;
+	grid-column: 16 / 17;
+	grid-row: 37 / 39;
+	/*position: absolute;
 	margin-left: 93%;
-	margin-top: 60.5%;
+	margin-top: 60.5%;*/
 	background-color: transparent;
 	background-size: contain;
 	cursor: pointer;
@@ -460,7 +444,7 @@ Diseño Panel Oculto
 	
 	margin-left: -85%;
 	margin-top: 60.5%;
-	color: aliceblue;
+	color: white;
 	cursor:pointer;
 	right: 25px;
 	font-size: 36px;
@@ -488,23 +472,25 @@ Diseño Panel Oculto
 
 #nuevoComentario {
     width: 100%;
-    margin: 5px;
-    background: rgba(0,0,0, 0.4);
+    background-color: transparent;
     box-sizing: border-box;
-    margin-top: 30px;
     border-radius: 7px;
+}
+
+#nuevoComentario ul {
+	margin-left: -8%;
+	list-style: none;
+	
 }
 
 
 
 #nuevoComentario input , textarea {
-    width: 80%;
+    width: 70%;
     margin-bottom: 20px;
     padding: 9px;
     box-sizing: 17px;
-    border: none;
-	list-style-type: none;
-	
+    border: none;	
 }
 
 textarea {
@@ -516,7 +502,9 @@ textarea {
 #boton {
     background: black;
     color: white;
+	border-radius: 5px;
     padding: 20px;
+
 }
 
 
@@ -607,7 +595,7 @@ Apartados adicionales de diseño de eventos
 
 .imageView {
     background-image: url(imgs/rome6.jpg);
-	position: relative;
+	  position: relative;
     min-height: 48em;
     background-size: cover;
     background-position: 70% 74%;
@@ -623,7 +611,7 @@ Apartados adicionales de diseño de eventos
 
 .background {
 	background:#83888d;
-    overflow: hidden;
+  overflow: hidden;
 	opacity: 0;
 	transition: 0.3s;
 	width: 100%;
@@ -667,9 +655,13 @@ Apartados adicionales de diseño de eventos
 
 .print{
 	z-index: 6;
+	grid-column: 4 / 5;
+	grid-row: 37 / 39;
+
+	/*
 	position: absolute;
 	margin-left: 18%;
-	margin-top: 63%;
+	margin-top: 63%;*/
 	background-color: transparent;
 	background-size: contain;
 	transform: scale(0.55);
