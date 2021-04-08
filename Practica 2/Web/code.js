@@ -28,16 +28,18 @@ function starsReplace(comment){
 function bannedWords(){
 	var banned = new Array("tonto", "tonta", "estupido", "estupida", "imbecil", "aburrido", "aburrida");
 	var checkComment = document.getElementById("Comentario").value;
-	var wordsList = checkComment.split(" ");
-	var singleWord = wordsList.pop();
+	var error=0;
 
 	for(var i = 0; i < banned.length;i++){
 		var checkWord = banned[i];
-		if((checkWord.toLowerCase()).indexOf(wordsList)!=-1){
+		if((checkComment.toLowerCase()).indexOf(checkWord.toString())>-1){
 			var newWord = checkComment.replace(checkComment,starsReplace(checkComment));
 			
-			checkComment.value = newWord;
+			error = error+1;
 		}
+	}
+	if(error>0){
+		document.getElementById("Comentario").value = newWord;
 	}
 }
 
