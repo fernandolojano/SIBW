@@ -1,0 +1,752 @@
+
+body {
+
+	font-family: 'Lato', sans-serif;
+	font-size:18px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	/*background-color:#393637;  Color Background principal*/
+	/*border: double 2px #943126;*/
+}
+
+
+/***********************************************************
+SELECCIÓN DE DIMENSIONES DE CADA APARTADO
+************************************************************/
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(79, minmax(25px, auto));
+}
+
+
+header {
+  z-index: 0;
+  grid-column: 1 / 17;
+  grid-row: 1 / 36;
+}
+
+.backgroundMenu {
+	z-index: 1;
+	grid-column: 1 / 17;
+  	grid-row: 1 / 3;
+}
+
+.menuTop {
+  z-index: 3;
+  grid-column: 1 / 17;
+  grid-row: 1 / 3;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: subgrid;
+  	/*border: double 2px #943126;*/
+
+}
+
+
+
+.headerBackground {
+  z-index:8;
+  grid-column: 1 / 17;
+  grid-row: 3 / 36;
+}
+
+.headerBackgroundMain {
+  z-index:10;
+  display: grid;
+  grid-column: 1 / 17;
+  grid-row: 3 / 36;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: subgrid;
+ 
+}
+
+
+.textBox {
+	z-index:1;
+	grid-column: 1 / 10;
+	grid-row: 10 / 23;
+}
+
+.textBackground {
+	z-index:1;
+	grid-column: 1 / 10;
+	grid-row: 10 / 22;
+
+
+}
+
+
+.asideBar{
+  z-index:1;
+  grid-column:1 / 4;
+  grid-row: 36 / 74;
+  /*border: double 2px #943126;*/
+}
+
+
+.events {
+  z-index:1;
+  grid-column: 4/ 17;
+  grid-row: 36 / 74;
+  /*border: double 2px #943126;*/
+}
+
+
+.footer {
+  z-index:1;
+  grid-column: 1 / 17;
+  grid-row: 74 / 80;
+  /*border: double 2px #943126;*/
+}
+
+
+/******************Version Impresion*******************/
+
+
+.printLogoBar {
+	z-index: 1;
+	grid-column: 1 / 17;
+  	grid-row: 1 / 3;
+  	/*border: double 2px #943126;*/
+
+}
+
+.printImgHeader {
+
+	grid-column: 1 / 17;
+	grid-row: 1 / 15;
+	/*border: double 2px #943126;*/
+
+}
+
+.printContent {
+
+	grid-column: 1 / 17;
+	grid-row: 15 / 75;
+	/*border: double 2px #943126;*/
+}
+
+
+.printFooter {
+	z-index: 0;
+	grid-column: 1 /17;
+	grid-row: 70 / 80;
+	/*border: double 2px #943126;*/	
+}
+
+
+
+
+/***********************************************************
+Diseño imagen principal
+************************************************************/
+
+.header {
+	background-image: url(imgs/Main.jpg);
+    min-height: 48em;
+    background-size: cover;
+    background-position: 60% 70%;
+}
+
+.header h2 {
+	font-size: 70px;
+    text-align: center;
+}
+
+.header p {
+	font-size: 50px;
+	text-align: center;
+}
+
+
+.textBackground {
+	background-color: #262329;
+	opacity: 0;
+	transition: 1s;
+}
+
+
+.textBox {
+	font-size: 120%;
+	color:white;
+
+
+}
+
+#p1, #p2, #p3, #p4, #p5{
+	text-align: center;
+	transform: scale(0);
+	transition: 0.5s;
+}
+
+
+.headerBackgroundMain:hover .textBackground {
+	transform: scale(1);
+    transition: 0.3s;
+    
+}
+
+.headerBackgroundMain:hover .textBox #p1 {
+	transform: scale(1);
+	transition: 0.5s;
+
+}
+
+.headerBackgroundMain:hover #p2 {
+	transform: scale(1);
+	transition: 0.8s;
+	
+}
+
+
+.headerBackgroundMain:hover #p3 {
+	transform: scale(1);
+	transition: 1s;
+	
+}
+
+.headerBackgroundMain:hover #p4 {
+	transform: scale(1);
+	transition: 1.3s;
+}
+
+.headerBackgroundMain:hover #p5 {
+	transform: scale(1);
+	transition: 1.6s;
+}
+
+.headerBackgroundMain:hover .textBackground {
+	opacity: 0.9;
+	transition: 0.3s;
+}
+
+
+
+
+
+/***********************************************************
+Diseño imagen menu y header
+************************************************************/
+
+.backgroundMenu {
+	background-color: #1b1b20;
+	height: 100%;
+	width: 100%;
+	opacity:0.7;
+}
+
+
+.menuTop {
+	float: left;
+	color:#f1f1f2;
+
+}
+
+.logoMenu {
+	object-fit: cover;
+	height: 100%;
+	grid-column: 1 / 3;
+	/*border: double 2px #943126;*/
+}
+.menuTop h1{
+	text-align: center;
+	font-size: 250%;
+	grid-row: 1 / 3;
+	grid-column: 3 / 7;
+}
+
+
+.menuTop nav {
+	grid-row: 1 / 3;
+	grid-column: 7 / 9;
+}
+
+.menuTop a {
+	color:#ABB1B6;      /*Color fuente submenu*/
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+
+.menuTop  li {
+	float:right;
+	display: inline;
+	padding: 0 10px 0 20px;
+
+}
+
+
+
+
+ .menuTop a:hover {
+	color:#ffffff;
+	font-weight: bold;
+}
+
+
+
+/***********************************************************
+Diseño barra lateral auxiliar
+************************************************************/
+
+.asideBar {
+	text-align: center;
+	background-color: #1b1b20;
+}
+
+.asideBar h2 {
+	margin:0;
+	font-size: 200%;
+	color:#727a84;
+}
+
+
+.seeAlso {
+	color:#f1f1f2;
+	font-size: 80%;
+	text-align: left;
+	padding: 3%;
+	transition: 1s;
+
+}
+
+.seeAlso:hover {
+	background-color: black;
+	transition: .5s;
+  border: double 2px grey;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+/***********************************************************
+Diseño Cuadro de Eventos
+************************************************************/
+
+
+.events {
+	clear:both;
+	background-color:#262329;
+	margin:0;
+
+}
+
+
+.events .box{
+
+	float:left;
+	margin-left: 2.5%;
+	margin-top: 4%;
+	margin-bottom: 4%;
+	width: 30%;
+	transition: 0.5s;	
+}
+
+
+.eventImage{
+  box-sizing: border-box;
+  border-radius: 5%;
+  height: 260px;
+  width: 100%;
+  padding: 2%;
+  background-color: #C6CFD0;
+}
+
+
+.hiddenBox {
+	margin-top: -269px;
+	position: relative;
+	background-color: #262329;
+    overflow: hidden;
+	opacity:0;
+	transition: 0.3s;
+	width: 100%;
+	height: 260px;
+	
+
+}
+
+.hiddenBoxTXT{
+	color:white;
+	background-color: transparent;
+	width: 95%;
+	z-index: 1;
+	text-align: center;
+	margin-top: -230px;
+	opacity: 0;
+	transform: scale(0.2);
+	transition: 0.3s;
+
+}
+
+
+.dateEv {
+	color:white;
+	padding: 20px;
+	margin-top: 20px;
+	text-align: center;
+	opacity: 1;
+	transform: scale(0);
+	transition: 0.3s;
+	
+}
+
+
+
+.box:hover .hiddenBox{
+	opacity: 0.4;
+	transition: 0.3s;
+}
+
+.box:hover .hiddenBoxTXT{
+	opacity: 1;
+	transition: 0.3s;
+	transform: scale(1);
+}
+
+
+.box:hover .dateEv {
+	transition: 0.7s;
+	transform: scale(1);
+}
+
+
+
+/***********************************************************
+Diseño Panel Oculto
+************************************************************/
+
+
+.commentsPanel {
+	z-index: 0;
+	grid-column: 13 / 17;
+    grid-row: 36 / 74;
+	height: 100%;
+	opacity: 0;
+	text-align: center;
+	background-color: #49405d;
+	color: white;
+
+}
+
+.nameSection{
+	color: white;
+	font-size: 200%;
+
+}
+
+#buttonOpen {
+	z-index: 6;
+	grid-column: 16 / 17;
+	grid-row: 37 / 39;
+	/*position: absolute;
+	margin-left: 93%;
+	margin-top: 60.5%;*/
+	background-color: transparent;
+	background-size: contain;
+	cursor: pointer;
+	transform: scale(0.26);		
+}
+
+
+
+.commentsPanel #buttonClose {
+	
+	margin-left: -85%;
+	margin-top: 60.5%;
+	color: white;
+	cursor:pointer;
+	right: 25px;
+	font-size: 36px;
+}
+
+
+.mainTitle {
+	color: #727a84;
+	font-size: 140%;
+	text-decoration: none;
+
+}
+
+
+.opinion {
+	color:#f1f1f2;
+	font-size: 80%;
+	text-align: left;
+	padding: 3%;
+	
+}
+
+
+
+#nuevoComentario {
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+#nuevoComentario ul {
+	margin-left: -8%;
+	list-style: none;
+	
+}
+
+
+
+#nuevoComentario input , textarea {
+    width: 70%;
+    margin-bottom: 20px;
+    padding: 9px;
+    box-sizing: 17px;
+    border: none;	
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+#boton {
+    background: black;
+    color: white;
+	border-radius: 5px;
+    padding: 20px;
+
+}
+
+
+
+/***********************************************************
+Diseño Pie de página
+************************************************************/
+
+
+.footer {
+	clear: both;
+	font-size: 25px;
+	margin:0;
+	color:#f1f1f2;
+	background-color: #1b1b20;
+	text-align: center;
+}
+
+
+.footer img {
+	transform: scale(0.5);
+}
+
+.footer ul {
+	margin-top:0%;
+	margin-left: 40%;
+}
+
+.footer li {
+	float: left;
+	display: inline;
+	padding: 0 0px 0 0px;
+
+}
+
+.footer footer {
+
+	float:right;
+	margin-top: 65px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+
+}
+
+.footer p {
+  
+  font-size: 0.5em;
+}
+
+
+
+
+/***********************************************************
+Apartados adicionales de diseño de eventos
+************************************************************/
+
+#descriptionContent {
+		margin:0;
+		color:#f1f1f2;
+}
+
+#descriptionContent h4, .printContent h4{
+	font-size: 200%;
+	text-align: center;
+}
+
+#descriptionContent h5, .printContent h5{
+	margin:0;
+	font-size: 120%;
+}
+
+#descriptionContent h6,  .printContent h6{
+	margin:0;
+	font-size: 110%;
+}
+
+
+.imageDescription {
+	box-sizing: border-box;
+	border-radius: 5%;
+	height: 300px;
+	width: 300px;
+	padding: 2%;
+	background-color: #C6CFD0;
+
+}
+
+.imageView {
+    background-image: url(imgs/rome6.jpg);
+	  position: relative;
+    min-height: 48em;
+    background-size: cover;
+    background-position: 70% 74%;
+    overflow: hidden;
+}
+
+.headerBackground {
+	background:transparent;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.background {
+	background:#83888d;
+  overflow: hidden;
+	opacity: 0;
+	transition: 0.3s;
+	width: 100%;
+	height: 100%;
+}
+
+
+.backgroundTXT {
+  color: white;
+  font-size: 800%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity:0;
+  transition: 0.3s;
+}
+
+
+.headerBackground:hover .backgroundTXT{
+	opacity: 1;
+	transition: 0.7s;
+}
+
+
+
+.headerBackground:hover .background {
+	opacity: 0.4;
+	transition: 0.3s;
+}
+
+
+
+
+.textWrap {
+	float:right;
+	margin:1%;
+}
+
+
+.print{
+	z-index: 6;
+	grid-column: 4 / 5;
+	grid-row: 37 / 39;
+
+	/*
+	position: absolute;
+	margin-left: 18%;
+	margin-top: 63%;*/
+	background-color: transparent;
+	background-size: contain;
+	transform: scale(0.55);
+}
+
+
+
+/*******Diseño de pagina de Impresión*****************/
+
+
+.printLogoBar {
+	margin:auto;
+}
+
+
+.printImgHeader {
+	background-image: url(imgs/rome6.jpg);
+	position: relative;
+    min-height: 20em;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    /*border: double 2px #943126;*/
+}
+
+.printContent {
+	background-color: #f1f1f2;
+	color: #1b1b20;
+	/*border: double 2px #943126;*/
+
+}
+
+
+
+.photoDesc1 {
+	float:right;
+	margin:10px;
+  	width: 370px;
+	align-content: center;
+  	/*border: double 2px #943126;*/
+
+}
+
+.photoDesc1 img {
+    height: 450px;
+}
+
+.photoDesc1 footer, .photoDesc2 footer {
+	margin:0;
+	text-align: center;
+}
+
+
+.photoDesc2 {
+	clear: both;
+	float:right;
+	margin:10px;
+  	width: 455px;
+	align-content: center;
+  	/*border: double 2px #000000;*/
+}
+
+
+.photoDesc2 img {
+   height: 330px;
+}
+
+
+.printFooter {
+	background-color: #f1f1f2;
+}
