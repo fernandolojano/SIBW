@@ -504,7 +504,7 @@ Apartados adicionales de diseño de eventos
 	position: relative;
     min-height: 48em;
     background-size: cover;
-    background-position: 70% 74%;
+    background-position: -70% 74%;
     overflow: hidden;
 }
 

@@ -1,0 +1,72 @@
+{% extends "template.html" %}
+
+
+
+	{% block cabecera %}
+	<title>Imprimir</title>
+	{% endblock %}
+
+
+
+	{% block navSuperior %}
+	 	<div class="printLogoBar">
+	  		<img src="imgs/logob.png">
+	  	</div>
+
+	    <header class="printImgHeader">
+	    	<style>
+				.printImgHeader {
+  					background-image: url({{ evento['banner'] }});
+				}
+		</style>
+		</header>
+	{% endblock %}
+
+
+  	{% block asideBar %}
+  	{% endblock %}
+
+	{% block eventos %}
+
+		<div class="printContent">
+			 <h4>{{ evento['titulo'] }}</h4>
+		  	<h5>Organizador: {{ evento['organizador'] }}</h5>
+		  	<h6>Fecha: {{ evento['fecha'] }}</h6>
+
+
+		  	
+
+		  	<div class="photoDesc1">
+				<img src={{ evento['image1'] }}>
+				<footer>
+				  	<br><i><small>Nombre: {{ evento['nombreImg1'] }}</small></i>
+				  	<br><i><small>Autora: {{ evento['autor1'] }}</small></i>
+				</footer>
+			</div>
+
+		  	
+			{{ evento['contenido'] }}
+			<div class="photoDesc2">
+				  	<img src={{ evento['image2'] }}>
+				  	<footer>
+				  		<br><i><small>Nombre: {{ evento['nombreImg2'] }}</small></i>
+				  		<br><i><small>Autor: {{ evento['autor2'] }}</small></i>
+				  	</footer>
+			</div>
+
+			{{ evento['contenido'] }}
+
+
+			<section class="contact">
+				<h5>Puedes obtener mas imformación sobre este evento a través de los siguientes medios:</h5>
+				<h5>Teléfono Móvil: 61625483</h5>
+				<h5>Teléfono: 986251412</h5>
+				<h5>Correo eléctronico: wanderlust@events.com </h5>
+
+			</section>
+		</div>
+			
+{% endblock %}
+		
+	
+

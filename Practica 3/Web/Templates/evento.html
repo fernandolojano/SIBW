@@ -1,0 +1,111 @@
+{% extends "template.html" %}
+
+	{% block cabecera %}
+	<title>Evento</title>
+	<script type="text/javascript" src="code.js" defer></script>
+	{% endblock %}
+
+	{% block cabeceraIMG %}
+
+  	<header class="imageView">
+
+	    <style>
+			.imageView {
+  				background-image: url( {{ evento['banner'] }});
+  				position: relative;
+    			min-height: 48em;
+    			background-size: cover;
+    			background-position: 70% 74%;
+    			overflow: hidden;
+			}
+		</style>
+ 	</header>
+		<div class="headerBackground">
+			<div class="background"></div>
+	  		<div class="backgroundTXT"></div>
+		</div>
+  
+	{% endblock %}
+
+	{% block eventos %}
+	 <div class="events" >
+	  	<div id="descriptionContent">
+		  <h4>{{ evento['titulo'] }}</h4>
+		  	<h5>Organizador: {{ evento['organizador'] }}</h5>
+		  	<h6>Fecha: {{ evento['fecha'] }}</h6>
+
+
+		  	<div class="photoDesc1">
+				<img src={{ evento['image1'] }}>
+				<footer>
+				  	<br><i><small>Nombre: {{ evento['nombreImg1'] }}</small></i>
+				  	<br><i><small>Autora: {{ evento['autor1'] }}</small></i>
+				</footer>
+			</div>
+
+		  	
+			{{ evento['contenido'] }}
+			<div class="photoDesc2">
+				  	<img src={{ evento['image2'] }}>
+				  	<footer>
+				  		<br><i><small>Nombre: {{ evento['nombreImg2'] }}</small></i>
+				  		<br><i><small>Autor: {{ evento['autor2'] }}</small></i>
+				  	</footer>
+			</div>
+
+			{{ evento['contenido'] }}
+
+			
+		  
+		</div>
+	  </div>
+	  <div class="print">
+	  	<a href={{ evento['enlaceImp'] }}>
+		 	<img src="imgs/printer.png">
+		</a>
+	  </div>
+			 
+		  
+		
+	  <button id="buttonOpen" >
+			<img src="imgs/comment-publication.png">
+	  </button>
+	  
+			
+	  <div id="myCommentsPanel" class="commentsPanel">
+			<a id="buttonClose" >x</a>
+		  	<p class="nameSection">Reseñas</p>
+		  <form  id="nuevoComentario">
+	        <h2>Nuevo Comentario</h2>
+			<ul>
+				<li><input type="text" id="Nombre"  placeholder="Nombre" required></li>
+				<li><input type="text" id="Correo"  placeholder="correo" required></li>
+				<li><input type="text" id="TituloComentario" placeholder="Titulo" required></li>
+				<li><textarea id="Comentario"  placeholder="Escribe aquí tu comentario" required></textarea></li>
+			</ul>
+	        
+	       
+	       <button type="submit" id="boton">Enviar</button>
+
+	    </form>
+
+	    {% for comentario in opiniones %}
+	     <article class="opinion" id="opinion">
+	  		<h3 class="mainTitle">{{ comentario['tituloCom'] }}</h3>
+				<h4 class="authorOpinion"><i>{{ comentario['autor'] }}</i></h4>
+			<h5 class="dateOpinion">{{ comentario['fechaPub']}}</h5>
+		  		<p>
+		            <cite>
+		                {{ comentario['textoComentario'] }}
+		            </cite>
+		        </p>
+	  	</article>
+		  
+	    {% endfor %}
+		  	
+	  </div>
+
+
+	{% endblock %}
+ 
+
