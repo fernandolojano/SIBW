@@ -1,0 +1,41 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Comentarios</title>
+	{% endblock %}
+
+	{% block asideBar %}
+	{% endblock %}
+
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="settingsSection">
+					<h2>Nuevo Evento</h2>
+				<form action="../addEvento.php" method="post" enctype="multipart/form-data">
+		       
+				<ul class="addEvento">
+					<li><input  class="rellenar" type="date" name="fecha-field" id="fechaEvento" placeholder="Fecha" required></li>
+					<li><input class="rellenar"type="text" name="titulo-field" id="TituloEvento"  placeholder="Titulo del evento" required></li>
+					<li><input class="rellenar" type="text" name="ciudad-field" id="ciudad" placeholder="Ciudad" required></li>
+					<li><input  class="rellenar"type="text" name="organizador-field" id="organizador" placeholder="Organizador" required></li>
+					<li><input class="rellenar" type="text" name="contenido-field" id="contenidoEvento" placeholder="Informacion del evento" required></li>
+					Img Evento:<input type="file" name="banner-field" /><br>
+					Img Banner:<input type="file" name="eventoImg-field" /><br>
+					
+					
+				</ul>
+		    	<button type="submit" class="myButton" >Crear</button>
+		  		</form>
+		  	</div>
+
+		{% elseif exito==-1 %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+
+	{% endblock %}
+	

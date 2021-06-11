@@ -1,0 +1,21 @@
+{% extends "templateFormulario.html" %}
+
+{% block cabecera %}
+    <title>Buscador</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="formCode.js"></script>
+{% endblock %}
+
+{% block formulario %}
+	<div class="sectionBuscar">
+		<h1 class="titulo">Buscar Eventos</h1>
+		<div id="buscador_eventos">
+        <label>Evento:</label><br>
+        <input type="text" name="evento-field" id="search" class="form-control" placeholder="Nombre">
+        <div id="resultados"> </div>
+    </div>
+
+	</div>
+
+{% endblock %}
+

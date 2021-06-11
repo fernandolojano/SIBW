@@ -1,0 +1,11 @@
+<ul class="list-unstyled">
+
+    {% if eventos %}
+        {% for evento in eventos %}
+            <li><a href="./evento.php?id={{ evento['id'] }}">{{ evento['titulo'] }}</a></li>
+        {% endfor %}
+    {% else %}
+        <li>Evento no encontrado</li>
+    {% endif %}
+    
+</ul>

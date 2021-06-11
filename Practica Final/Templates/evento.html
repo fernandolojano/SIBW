@@ -1,0 +1,137 @@
+{% extends "template.html" %}
+
+	{% block cabecera %}
+	<title>Evento</title>
+	<script type="text/javascript" src="code.js" defer></script>
+
+    <script>
+        var banned = [];
+        {% for palabra in palabras %}
+            banned.push({{ palabra | json_encode | raw }});
+        {% endfor %}
+    </script>
+
+	{% endblock %}
+
+	{% block cabeceraIMG %}
+
+  	<header class="imageView">
+
+	    <style>
+			.imageView {
+  				background-image: url( {{ banner.direccion }} );
+  				position: relative;
+    			min-height: 48em;
+    			background-size: cover;
+    			background-position: 70% 74%;
+    			overflow: hidden;
+			}
+		</style>
+ 	</header>
+		<div class="headerBackground">
+			<div class="background"></div>
+	  		<div class="backgroundTXT">{{ evento['lugar'] }}</div>
+		</div>
+  
+	{% endblock %}
+
+	{% block eventos %}
+	 <div class="events" >
+	  	<div id="descriptionContent">
+		  <h4>{{ evento['titulo'] }}</h4>
+		  	<h5>Organizador: {{ evento['organizador'] }}</h5>
+		  	<h6>Fecha: {{ evento['fecha'] }}</h6>
+
+		  	{% if imagenes %}
+
+		  		{% for imagen in imagenes %}
+
+		  			{% if imagen.tipo is same as 'img1' %}
+				  		<div class="photoDesc1">
+				  	{% elseif imagen.tipo is same as 'img2' %}
+				  		<div class="photoDesc2">
+				  	{% endif %}
+
+
+					<img src={{ imagen['direccion'] }}>
+						<footer>
+						  	<br><i><small>Nombre: {{ imagen['nombreImg'] }}</small></i>
+						  	<br><i><small>Autor/a: {{ imagen['autorImg'] }}</small></i>
+						</footer>
+					</div>
+
+					{{ evento['contenido']}}
+
+				{% endfor %}
+				{{ evento['contenido']}}
+
+			{% else %}
+				{{ evento['contenido']}}
+				{{ evento['contenido']}}
+			{% endif %}	
+		  
+		</div>
+	  </div>
+	  <div class="print">
+	  	<a href={{ evento['enlaceImp'] }}>
+		 	<img src="imgs/printer.png">
+		</a>
+	  </div>
+
+
+		{% if usuario['tipoUsuario']=='Super' or usuario['tipoUsuario']=='Gestor'  %}
+			<div class="deleteEvent">
+		  		<a href="deleteEvento.php?id={{ evento['id'] }}"><img src="imgs/delete.png"></a>
+			</div>
+		{% endif %}
+	 
+			  
+	  <button id="buttonOpen" onclick="openPanel()" >
+			<img src="imgs/comment-publication.png">
+	  </button>
+	  	
+	  <div id="myCommentsPanel" class="commentsPanel">
+	 
+		<a id="buttonClose"  onclick="closePanel()">x</a>
+		<p class="nameSection">Reseñas</p>
+
+		{% if conectado==1 %}
+		<form id="nuevoComentario" action="../addComentario.php?id={{ evento['id'] }}" method="post">
+	       	<h2>Nuevo Comentario</h2>
+			<ul>
+				<li><input type="text" name="autor-field" id="Nombre"  placeholder="Nombre" required></li>
+				<li><input type="text" name="email-field" id="Correo"  placeholder="correo" required></li>
+				<li><input type="text" name="tituloCom-field" id="TituloComentario" placeholder="Titulo" required></li>
+				<li><textarea id="Comentario" name="textoCom-field" placeholder="Escribe aquí tu comentario" required></textarea></li>
+			</ul>
+	    	<button type="submit" id="boton" >Enviar</button>
+	  	</form>
+	  	{% endif %}
+
+	    {% for comentario in opiniones %}
+	     <article class="opinion" id="opinion">
+	  		<h3 class="mainTitle">{{ comentario['tituloCom'] }}</h3>
+				<h4 class="authorOpinion"><i>{{ comentario['autor'] }}</i></h4>
+			<h5 class="dateOpinion">{{ comentario['fechaPub']}}</h5>
+		  		<p>
+		            <cite>
+		                {{ comentario['textoComentario'] }}
+		            </cite>
+		        </p>
+		    {% if usuario['tipoUsuario']=='Super' or usuario['tipoUsuario']=='Moderador' or usuario['tipoUsuario']=='Gestor'  %}
+		    <div class="btn-comment" >
+		    	<a href="../deleteComentario.php?id={{ comentario['idCom'] }}"><img src="imgs/delete.png"></a>
+		    	<a href="../editComentarioSimple.php?id={{ comentario['idCom'] }}"><img src="imgs/edit.png"></a>
+		    </div>
+		    {% endif %}
+		    
+	  	</article>
+		  
+	    {% endfor %}
+		  	
+	  </div>
+
+
+	{% endblock %}
+ 
+

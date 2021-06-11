@@ -1,0 +1,49 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Comentarios</title>
+	{% endblock %}
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="settingsSection">
+				<h1 class="titulo">Configuración</h1>
+
+				<div class="seccion-perfil">
+		            <img class="imagen-perfil" src="imgs/user.png" alt="img-avatar">
+			        <div class="perfil-usuario">
+			            <h3 class="titulo">{{ usuario['username']}}</h3>
+			            <ul class="lista-datos">
+				            <li></i> Email: {{ usuario['email'] }}</li>
+				            <li></i>Tipo de Usuario: {{ usuario['tipoUsuario']}} </li>  
+			             <a href="editPerfil.php?id={{ usuario['id'] }}" class="myButton">Editar Perfil</a>
+  
+			            </ul>
+			        </div>
+			    </div>
+
+			    <div class="opciones">
+			    	{% if usuario['tipoUsuario']=="Super" %}
+				       	<a class="myButton" href="usuarios.php">Lista de usuarios</a>
+				       	<a class="myButton" href="eventos.php">Lista de eventos</a>
+				       	<a class="myButton" href="comentarios.php">Lista de comentarios</a>
+
+			       	{% elseif usuario['tipoUsuario']=="Gestor" %}
+			        <a class="myButton" href="eventos.php">Lista de eventos</a>
+			        <a class="myButton" href="comentarios.php">Lista de comentarios</a>
+			         
+			        {% elseif usuario['tipoUsuario']=="Moderador" %}
+			       	<a class="myButton" href="comentarios.php">Lista de comentarios</a>
+			       	{% endif %}
+			    </div>
+			</div>
+
+		{% else %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+	{% endblock %}
+	

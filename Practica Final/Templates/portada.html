@@ -1,0 +1,54 @@
+{% extends "template.html" %}
+
+{% block cabecera %}
+<title>Portada</title>
+{% endblock %}
+
+
+{% block cabeceraIMG %}
+	<header class="header"></header>
+  	<div class="headerBackgroundMain">
+	  	<div class="textBackground"></div>
+	  	<div class="textBox">
+	  		<cite>
+		  		<p id="p1">To see the world,things dangerous to come to,</p>
+				<p id="p2">to see behind walls, draw closer,</p>
+				<p id="p3">to find each other, and to feel.</p>
+				<p id="p4">That is the purpose of life.</p>
+				<p id="p5"><small><strong>Life's Magazine Motto</strong></small></p>
+			</cite>
+	  	</div>
+  	</div>
+
+{% endblock %}
+
+{% block eventos %}
+	{% if usuario['tipoUsuario']=='Super' or usuario['tipoUsuario']=='Gestor'  %}
+		<div class="addEvent">
+  			<a href="../addEvento.php"><img src="imgs/add.png"></a>
+  		</div>
+  	{% endif %}
+
+  <div class="events">
+  	{% for evento in eventos %}
+
+  	{% if evento['publicado']==true %}
+
+		<a href={{ evento['enlace'] }}>
+			<div class="box">
+				<img class="eventImage" src={{ evento['Img'] }}>
+				
+				<div class="hiddenBox"></div>
+
+				<div class="hiddenBoxTXT">
+					<h4>{{evento['titulo']}}</h4>
+					<p>Este evento se dará el dia </p>					
+				</div>
+				<footer class="dateEv">{{ evento['fecha'] }}</footer>
+		</div></a>
+	{% endif %}
+	{% endfor %}
+</div>
+
+	
+{% endblock %}

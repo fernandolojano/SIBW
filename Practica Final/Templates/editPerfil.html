@@ -1,0 +1,31 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Añadir Perfil</title>
+	{% endblock %}
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="settingsSection">
+					<h2>Editar Perfil</h2>
+				<form action="../editPerfil.php?id={{ usuario['id'] }}" method="post" enctype="multipart/form-data">
+		       
+				<ul class="editPerfil">
+					<li><input  class="rellenar" type="text" name="username-field" id="username" placeholder="Nombre de usuario" required></li>
+					<li><input class="rellenar" type="text" name="email-field" id="email" placeholder="email" required></li>
+					<li><input class="rellenar" type="password" name="password-field" id="password"  placeholder="Constraseña " required></li>					
+				</ul>
+		    	<button type="submit" class="myButton" >Editar</button>
+		  		</form>
+		  	</div>
+
+		{% elseif exito==false %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+
+	{% endblock %}
+	

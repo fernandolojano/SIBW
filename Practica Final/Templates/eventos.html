@@ -1,0 +1,57 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Eventos</title>
+	{% endblock %}
+
+	{% block asideBar %}
+	{% endblock %}
+
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="commentSection">
+				<h3 class="titulo">Lista de Eventos</h3>
+				{% for evento in eventos %}
+
+					<div class="comentario">
+						<p><b class="titleName">Id Evento: </b> <i> {{ evento['id'] }} </i> </p> 
+						<p><b class="titleName">Estado: </b> <i>{% if  evento['publicado']== 0 %}No Publicado {% else %} Publicado {% endif %}</i> </p> 
+						<p><b class="titleName">Titulo del evento: </b> <i> {{ evento['titulo'] }} </i></p> 
+						<p><b class="titleName">Nombre del organizador: </b> <i> {{ evento['organizador']}} </i></p> 
+						<p><b class="titleName">Lugar del evento: </b> <i> {{ evento['lugar'] }} </i></p> 
+						<p><b class="titleName">Fecha del evento: </b> <i> {{ evento['fecha'] }} </i></p> 
+						<p><b class="titleName">Texto: </b> <i> {{ evento['contenido']}} </i></p> 
+
+						<form class="changeStatus" action="editEstado.php?id={{ evento['id'] }}" method="post">
+							<select name="estadoPublicacion">
+								<option value="false">No publicado</option>
+								<option value="true">Publicado</option>
+							</select> <br>
+						   <button type="submit" class="myButton">Cambiar estado</button>
+						</form>
+						
+						<form  action="../editEvento.php?id={{ evento['id'] }}" method="post">
+						    <button type="submit" class="myButton">Editar Evento</button>
+						</form>
+						<a href="../deleteEvento.php?id={{ evento['id'] }}">
+							<button type="button" class="myButton" name="borrar">Borrar Evento</button>
+						</a>
+						<form action="../etiquetas.php?id={{ evento['id'] }}" method="post">
+						    <button type="submit" class="myButton">Etiquetas</button>
+						</form>
+						<a href="../addImagen.php?id={{ evento['id'] }}">
+							<button type="button" class="myButton" name="borrar">Añadir Fotos</button>
+						</a>
+					</div>	
+				{% endfor %}
+			</div>
+
+		{% else %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+	{% endblock %}

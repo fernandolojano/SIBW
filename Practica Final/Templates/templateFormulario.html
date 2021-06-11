@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="formStyle.css">
+  {% block cabecera %}
+  {% endblock %}
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="navBar">
+      <img src="imgs/logo.png">
+       <nav class="menu">
+        <ul>
+            <li><a href="searchEventos.php">Buscar</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="settings.php">Settings</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+     
+   
+    
+      {% block formulario %}
+      {% endblock %}
+
+    <footer class="footer">
+      <section>
+      <p>Copyright &copy; 2021 </p>
+        <p> Página y diseño realizado por: Fernando Lojano</p>
+      </section>
+    </footer>
+  </div>
+</body>
+</html>  

@@ -1,0 +1,42 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Usuarios</title>
+	{% endblock %}
+
+	{% block asideBar %}
+	{% endblock %}
+
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="commentSection">
+				<h3 class="titulo">Lista de Usuarios</h3>
+				{% for usuario in usuarios %}
+					<div class="comentario">
+						<p><b class="titleName">UserName: </b> <i> {{ usuario['username'] }} </i> </p> 
+						<p><b class="titleName">Correo Electrónico: </b> <i> {{ usuario['email']}} </i></p> 
+						<p><b class="titleName">Tipo de Usuario: </b> <i> {{ usuario['tipoUsuario'] }} </i></p> 
+						
+						<form action="../editPermiso.php?id={{ usuario['id'] }}" method="post">
+							<select name="permisos">
+								<option value="Default">Default</option>
+								<option value="Moderador">Moderador</option>
+								<option value="Gestor">Gestor</option>
+								<option value="Super">SuperUsuario</option>
+							</select>
+						    <button type="submit" class="myButton">Editar Permiso perfil</button>
+						</form>
+						
+					</div>	
+				{% endfor %}
+			</div>
+
+		{% else %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+	{% endblock %}

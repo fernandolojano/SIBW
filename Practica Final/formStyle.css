@@ -1,0 +1,394 @@
+
+body {
+
+	font-family: 'Lato', sans-serif;
+	font-size:18px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	background: #4D445F;
+	align-items: center;
+	justify-content: center;
+	transform-style: preserve-3d;
+	transform: perspective(800px);
+	/*border: double 2px #943126;*/
+}
+
+
+/***********************************************************
+SELECCIÓN DE DIMENSIONES DE CADA APARTADO
+************************************************************/
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(25, minmax(25px, auto));
+}
+
+
+.navBar {
+	z-index: 1;
+	grid-column: 1 / 17;
+  	grid-row: 1 / 2;
+  	background-size: contain;
+  	margin: 0;
+  	/**border: double 2px #943126*/
+}
+
+.loginSection {
+	grid-column: 1 / 17;
+	grid-row: 2 / 20;
+	/*border: double 2px #ffffff;*/
+}
+
+.commentSection {
+	grid-column: 1 / 17;
+	grid-row: 2 / 20;
+	/*border: double 2px #ffffff;*/
+}
+
+.settingsSection {
+	grid-column: 1 / 17;
+	grid-row: 2 / 20;
+	/*border: double 2px #ffffff;*/
+}
+
+
+.footer {
+  z-index:1;
+  grid-column: 1 / 17;
+  grid-row: 20 / 26;
+  /*border: double 2px #943126;*/
+}
+
+
+/***********************************************************
+Diseño header
+************************************************************/
+
+.navBar {
+	background-color: #1b1b20;
+	opacity: 0.8;
+	clear: both;
+	display: grid;
+	grid-template-columns: repeat(21, 1fr);
+  	grid-template-rows: repeat(10, 10px);
+
+}
+
+.navBar img {
+	margin-top: -16px;
+	grid-row: 1 / 10;
+	grid-column: 11 / 12;
+	transform: scale(0.75);
+	/*border: double 2px #943126;*/
+}
+
+
+.menu {
+	clear:both;
+	float: right;
+	grid-row: 3 / 4;
+	grid-column: 18 / 22;
+	color:#f1f1f2;
+
+}
+
+
+.menu h1{
+	text-align: center;
+	font-size: 250%;
+}
+
+
+
+.menu a {
+	color:#ABB1B6;      /*Color fuente submenu*/
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+
+.menu  li {
+	float:right;
+	display: inline;
+	padding: 0 10px 0 20px;
+
+}
+
+
+
+
+ .menu a:hover {
+	color:#ffffff;
+	font-weight: bold;
+}
+
+
+
+
+/***********************************************************
+Diseño Pie de página
+************************************************************/
+
+
+.footer {
+	clear: both;
+	font-size: 25px;
+	margin:0;
+	color:#f1f1f2;
+	text-align: center;
+	/*border: double 2px #943126;*/
+}
+
+
+.footer img {
+	transform: scale(0.5);
+}
+
+.footer ul {
+	margin-top:0%;
+	margin-left: 40%;
+}
+
+.footer li {
+	float: left;
+	display: inline;
+	padding: 0 0px 0 0px;
+
+}
+
+.footer footer {
+	float:right;
+	margin-top: 65px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+
+}
+
+.footer p {
+  font-size: 0.5em;
+}
+
+
+/***********************************************************
+Diseño Formulario de Login
+************************************************************/
+
+
+.loginSection {
+	text-align: center;
+	width: 380px;
+	height: 480px;
+	position: relative;
+	margin: 6% auto;
+	background: white;
+	padding: 5px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.button-box {
+	width: 220px;
+	margin: 35px auto;
+	position: relative;
+	box-shadow: 0 0 20px 9px #4d445f;
+	border-radius: 30px;
+}
+
+.toggle-btn {
+	color: white;
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+}
+
+#btn {
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: linear-gradient(to right, #1e1f26, #4d445f);
+	border-radius: 30px;
+	transition: 0.5s;
+}
+
+.input-group {
+	top: 180px;
+	position: absolute;
+	width: 280px;
+	transition: 0.5s;
+}
+
+.username-field, .password-field, .email-field {
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	background: transparent;
+}
+
+.submit-btn { 
+	color: white;
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: linear-gradient(to right, #1e1f26, #4d445f);
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+}
+
+#login {
+	left: 50px;
+}
+
+#register {
+	left: 450px;
+}
+
+.titulo{ 
+color: white;
+font-size: 200%; }
+
+.commentSection {
+	padding: 10%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+.comentario {
+	margin-bottom: 20px;
+	border: double 2px white;
+	color: white;
+	border-radius: 30px;
+}
+
+
+.settingsSection {
+	color: white;
+	text-align: center;
+}
+
+.seccion-perfil{
+	text-decoration:none;
+	text-align: center;
+	/*border: double 2px #943126;*/
+}
+
+.addEvento{
+	 list-style-type: none;
+	 margin: 25px;
+}
+
+.editPerfil{
+
+}
+
+.lista-datos{
+	 list-style-type: none;
+}
+
+.imagen-perfil{
+	width: 150px;
+}
+
+
+.rellenar{
+	width: 300px;
+	height: 25px;
+	border-radius: 15px;
+}
+
+.editPerfil{
+	list-style-type: none;
+
+}
+
+
+
+
+
+
+
+/****************************************************************************************
+Seccion configuracion
+******************************************************************************************/
+
+.myButton {
+	width: 300px;
+	margin-bottom: 20px;
+	background: linear-gradient(to right, #1e1f26, #4d445f);
+	border-radius:28px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:5px ;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #1e1f29;
+}
+
+.myButton:hover {
+	background-color:#363a51;
+}
+
+.sectionBuscar{
+	grid-column: 9;
+	grid-row:5;
+	align-items: center;
+	text-align: center;
+
+
+}
+
+#buscador_eventos{
+   	border-radius: 20px;
+    background-color: white;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 500px;
+    height: 500px;
+    border: double 2px #943126;
+}
+
+#resultados ul{
+    background-color: var(--color1);
+    cursor: pointer;
+    border: double 2px #943126;
+}
+
+#resultados ul li{
+    padding: 6px;
+    list-style: none;
+}
+
+#resultados ul li:hover{
+    background-color: var(--color6);
+    transition: 0.1s;
+}
+
+#resultados ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+#search{
+    width: 70%;
+}

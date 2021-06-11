@@ -1,0 +1,39 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Comentarios</title>
+	{% endblock %}
+
+	{% block asideBar %}
+	{% endblock %}
+
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="settingsSection">
+					<h2>Nueva Imagen</h2>
+				<form action="../addImagen.php?id={{ evento['id'] }}" method="post" enctype="multipart/form-data">
+				<ul class="addEvento">
+					Imagen :<input type="file" name="imagen-field"  required /><br>
+					<li><input  class="rellenar" type="text" name="nombre-field" id="nombreImagen" placeholder="Nombre de Imagen" required></li>
+					<li><input class="rellenar"type="text" name="autor-field" id="autorImagen"  placeholder="Autor/a de la foto" required></li>
+					<select name="tipo-field" placeholder="Tipo de imagen">
+						<option value="Banner">Imagen Banner</option>
+						<option value="img1">Imagen 1</option>
+						<option value="img2">Imagen 2</option>
+					</select>
+				</ul>
+		    	<button type="submit" class="myButton" >Añadir</button>
+		  		</form>
+		  	</div>
+
+		{% elseif exito==-1 %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+
+	{% endblock %}
+	

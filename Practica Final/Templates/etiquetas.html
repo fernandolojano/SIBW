@@ -1,0 +1,49 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Etiquetas</title>
+	{% endblock %}
+
+	{% block asideBar %}
+	{% endblock %}
+
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="commentSection">
+				<h3 class="titulo">Lista de Etiquetas </h3>
+
+				
+					<div class="comentario">
+						<p><b class="titleName">Id Evento: </b> <i> {{ evento['id'] }} </i> </p> 
+						<p><b class="titleName">Nombre Evento: </b> <i> {{ evento['titulo'] }} </i></p> 
+						
+						
+						<p><b class="titleName">Etiquetas: </b>{% for etiqueta in listaEtiquetas  %} <i>{{ etiqueta['nombre'] }},</i>
+						{% endfor %}</p> 
+					
+
+						<form action="../addEtiqueta.php?id={{ evento['id'] }}" method="post">
+				    		<input  class="rellenar" type="text" name="etiqueta-field" placeholder="Nombre de etiqueta" required>
+				    		<br>
+						    <button type="submit" class="myButton">Añadir</button>
+						</form>
+
+						<a href="../deleteEtiquetas.php?id={{ evento['id'] }}">
+							<button type="button" class="myButton" name="borrar">Borrar Etiquetas</button>
+						</a>	
+
+
+					</div>	
+	
+			</div>
+
+		{% else %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+	{% endblock %}
+	

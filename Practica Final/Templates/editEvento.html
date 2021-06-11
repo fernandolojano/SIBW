@@ -1,0 +1,38 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Comentarios</title>
+	{% endblock %}
+
+	{% block asideBar %}
+	{% endblock %}
+
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="settingsSection">
+					<h2>Editar Evento</h2>
+				<form action="editEvento.php?id={{ evento['id'] }}" method="post" enctype="multipart/form-data">
+				<ul class="addEvento">
+					<li><input  class="rellenar" type="date" name="fecha-field" id="fechaEvento" placeholder="Fecha" required></li>
+					<li><input class="rellenar"type="text" name="titulo-field" id="TituloEvento"  value="{{ evento['titulo'] }}" required></li>
+					<li><input class="rellenar" type="text" name="ciudad-field" id="ciudad" value="{{ evento['lugar'] }}" required></li>
+					<li><input  class="rellenar"type="text" name="organizador-field" id="organizador" value="{{ evento['organizador'] }}" required></li>
+					<li><input class="rellenar" type="text" name="contenido-field" id="contenidoEvento" placeholder="contenido del evento " required></li>
+					Img Evento:<input type="file" name="banner-field" required /><br>
+					Img Banner:<input type="file" name="eventoImg-field" required /><br>
+				</ul>
+		    	<button type="submit" class="myButton" >Editar</button>
+		  		</form>
+		  	</div>
+
+		{% elseif exito==-1 %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+
+	{% endblock %}
+	

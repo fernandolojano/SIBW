@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	{% block cabecera %}
+	{% endblock %}
+</head>
+
+<body>
+	<div class="container">
+
+		{% block navSuperior %}
+		<div class="backgroundMenu"></div>
+		<div class="menuTop">
+			<div class="logoMenu"><img src="imgs/logo.png"></div>
+			<h1>Wanderlust</h1>
+			<nav>
+				<ul>
+				{% block menu %}
+					{% if conectado == 1 %}
+					     <li><a href="searchEventos.php">Buscar</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="settings.php">Settings</a></li>
+						<li><a href="logout.php">Logout</a></li>
+					{% else %}
+						<li><a href="searchEventos.php">Buscar</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="index.php">About us</a></li>
+						<li><a href="login.php">Login</a></li>
+					{% endif %}
+				{% endblock %}	
+				</ul>
+			</nav>
+	  	</div> 	
+		{% endblock %}
+	  
+	  	{% block cabeceraIMG %}
+	  	{% endblock %}
+
+	  	{% block asideBar %}
+	    <aside class="asideBar">
+		  	<h2>Mira también</h2>
+
+		  	<a href="https://ec.europa.eu/info/live-work-travel-eu/coronavirus-response/travel-during-coronavirus-pandemic_es">
+		  		<article class="seeAlso">
+		  			<h3 class="mainTitle">Viajes durante la pandemia</h3>
+				  	<p>Información detallada sobre la realización de viajes durante el transcurso de la pandemia.</p>
+		  		</article>
+		 	 </a>
+
+		  	<a href="http://www.aena.es/es/passengers/travel-usa.html">
+		  		<article class="seeAlso">
+		  			<h3 class="mainTitle">Viaja a EEUU</h3>
+				  	<p>Información detallada sobre la documentación necesaria para viajar al continente norteamericano.</p>
+			  	</article>
+			</a>
+
+		  	<a href="https://europa.eu/youreurope/citizens/travel/entry-exit/index_es.htm">
+		  		<article class="seeAlso">
+			  		<h3 class="mainTitle">Viaja por Europa</h3>
+				  	<p>¿Qué documentación necesito para viajar por toda Europa sin ningún problema?</p>
+		  		</article>
+		  	</a>	
+	    </aside>
+	    {% endblock %}
+
+	    {% block eventos %}
+	    {% endblock %}
+	    {% block loginSection %}
+	    {% endblock %}
+
+	    <footer class="footer">
+		  	<section>
+				<p>Copyright &copy; 2021 </p>
+					<p> Página y diseño realizado por: Fernando Lojano</p>
+		  		<nav>
+
+				  <ul>
+					    <li><img src="imgs/instagram.png"><a href=""></a></li>
+						<li><img src="imgs/twitter.png"><a href=""></a></li>
+						<li><img src="imgs/facebook.png"><a href=""></a></li>
+						<li><img src="imgs/mail-send.png"><a href=""></a></li>
+					</ul>	
+				</nav>	
+	  		</section>
+		</footer>
+	</div>
+</body>
+</html>
+
+			

@@ -1,0 +1,42 @@
+{% extends "templateFormulario.html" %}
+
+	{% block cabecera %}
+	<title>Comentarios</title>
+	{% endblock %}
+
+	{% block asideBar %}
+	{% endblock %}
+
+
+	{% block formulario %}
+
+		{% if conectado == 1 %}
+			<div class="commentSection">
+				<h3 class="titulo">Editar Comentario</h3>
+					<div class="comentario">
+						<p><b class="titleName">Id Evento: </b> <i> {{ comentario['idEvento'] }} </i> </p> 
+						<p><b class="titleName">Nombre Evento: </b> <i> {{ comentario['nombreEvento'] }} </i></p> 
+						<p><b class="titleName">Titulo Comentario: </b> <i> {{ comentario['tituloCom'] }} </i></p> 
+						<p><b class="titleName">Fecha Comentario: </b> <i> {{ comentario['fecha'] }} </i></p> 
+						<p><b class="titleName">Autor Comentario: </b> <i> {{ comentario['autor'] }} </i></p> 
+						<p><b class="titleName">Contenido Comentario: </b> <i> {{ comentario['textoComentario']}} </i></p> 
+						<p><b class="titleName">Ha sido modificado: </b><i> {{ comentario['modificado']}} </i></p>
+						<p><b class="titleName">idComentario: </b> <i> {{ comentario['idCom'] }} </i></p>
+
+						<form id="change-comment" action="../editComentarioSimple.php?id={{ comentario['idCom'] }}" method="post">
+				    		<input  class="rellenar" type="text" name="comment-field" placeholder="comentario" required>
+
+						    <button type="submit" class="myButton">Editar</button>
+						</form>
+		
+					</div>	
+			</div>
+
+		{% else %}
+			<div class="notificacion">
+				<h4>Ha ocurrido un error</h4>
+            	<a href="index.php">Volver a Home</a> 
+			</div>
+		{% endif %}
+	{% endblock %}
+	
